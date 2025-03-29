@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Main\ScoreController;
 use App\Http\Controllers\Main\UserController;
+use App\Http\Controllers\Page\JudgeCategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     Route::get('attire_ranking', [ScoreController::class, 'attireRanking']);
 });
+
+
+Route::post('storeproduction', [JudgeCategoryController::class, 'storeProductionNumber'])->name('storeproduction');

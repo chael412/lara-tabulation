@@ -36,6 +36,7 @@
         "clsx": "^2.1.1",
         "date-fns": "^4.1.0",
         "lucide-react": "^0.483.0",
+        "react-hook-form": "^7.55.0",
         "react-icons": "^5.5.0",
         "react-spinners": "^0.15.0",
         "shadcn": "^1.0.0",
