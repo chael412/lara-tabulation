@@ -45,6 +45,24 @@ export function AppSidebar({ ...props }) {
                 icon: LayoutDashboard,
                 isActive: url === route("dashboard", {}, false),
             },
+            {
+                title: "Prodcution Number",
+                url: route("dashboard"),
+                icon: LayoutDashboard,
+                isActive: url === route("dashboard", {}, false),
+            },
+            {
+                title: "Jeans Wear",
+                url: route("dashboard"),
+                icon: LayoutDashboard,
+                isActive: url === route("dashboard", {}, false),
+            },
+            {
+                title: "Festival Attire",
+                url: route("dashboard"),
+                icon: LayoutDashboard,
+                isActive: url === route("dashboard", {}, false),
+            },
         ],
     };
 
