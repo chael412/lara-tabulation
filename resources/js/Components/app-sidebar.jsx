@@ -47,9 +47,9 @@ export function AppSidebar({ ...props }) {
             },
             {
                 title: "Prodcution Number",
-                url: route("dashboard"),
+                url: route("productionnumber"),
                 icon: LayoutDashboard,
-                isActive: url === route("dashboard", {}, false),
+                isActive: url === route("productionnumber", {}, false),
             },
             {
                 title: "Jeans Wear",
