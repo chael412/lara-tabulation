@@ -1,6 +1,6 @@
 import { AiFillAndroid } from "react-icons/ai";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import {
     Table,
     TableBody,
@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/table";
 
 export default function Page() {
+    const user = usePage().props.auth.user;
+
     return (
         <AuthenticatedLayout
             header={
@@ -22,6 +24,7 @@ export default function Page() {
         >
             <Head title="Dashboard" />
             <div>
+                <div>{user.id}</div>
                 <Table>
                     <TableCaption>A list of your recent invoices.</TableCaption>
                     <TableHeader>

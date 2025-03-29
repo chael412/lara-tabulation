@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolePermissionSeeder::class,
             AdminUserSeeder::class,
-            GuestUserSeeder::class
+            GuestUserSeeder::class,
+            CategorySeeder::class
         ]);
 
         Candidate::factory()->count(7)->create();

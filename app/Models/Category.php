@@ -14,4 +14,9 @@ class Category extends Model
         'category_name',
         'percentage',
     ];
+
+    public function scores()
+    {
+        return $this->hasMany(Score::class);
+    }
 }
