@@ -26,6 +26,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
     Route::get('productionnumber', [JudgeCategoryController::class, 'getProductionNumber'])->name('productionnumber');
+    Route::get('jeanswear', [JudgeCategoryController::class, 'getJeansWear'])->name('jeanswear');
+    Route::get('casualwear', [JudgeCategoryController::class, 'getCasualWear'])->name('casualwear');
+    Route::get('beauty', [JudgeCategoryController::class, 'getBeauty'])->name('beauty');
+    Route::get('festivalattire', [JudgeCategoryController::class, 'getFestivalAttire'])->name('festivalattire');
+    Route::get('gown', [JudgeCategoryController::class, 'getGown'])->name('gown');
+    Route::get('qanda', [JudgeCategoryController::class, 'getQandA'])->name('qanda');
+    Route::get('swimsuit', [JudgeCategoryController::class, 'getSwimsuit'])->name('swimsuit');
+    Route::get('talent', [JudgeCategoryController::class, 'getTalent'])->name('talent');
 });
 
 Route::middleware('auth')->group(function () {
