@@ -18,6 +18,18 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+    Route::get('hello', function () {
+        return "hello world";
+    });
+});
+
+Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
+    Route::get('hello', function () {
+        return "hello world";
+    });
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

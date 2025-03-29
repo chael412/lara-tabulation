@@ -15,20 +15,22 @@ class GuestUserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create the admin role if it doesn't exist
-        $guestRole = Role::firstOrCreate(['name' => 'guest']);
+        // Create the judge role if it doesn't exist
+        $judgeRole = Role::firstOrCreate(['name' => 'judge']);
 
-        // Create the user and assign the admin role
-        $user = User::create([
-            'name' => 'User',
-            'email' => 'user@gmail.com',
-            'password' => Hash::make('123123123'), // Use a secure password
-            'email_verified_at' => Carbon::now(), // Automatically verify the email
-        ]);
+        // Create 7 judge users
+        for ($i = 1; $i <= 7; $i++) {
+            $user = User::create([
+                'name' => "Judge{$i}",
+                'email' => "judge{$i}@gmail.com",
+                'password' => Hash::make('123123123'), // Use a secure password
+                'email_verified_at' => Carbon::now(), // Automatically verify the email
+            ]);
 
-        // Assign the admin role to the user
-        $user->assignRole($guestRole);
+            // Assign the judge role to the user
+            $user->assignRole($judgeRole);
+        }
 
-        $this->command->info("✅ Guest Users seeded successfully!");
+        $this->command->info("✅ 7 Judge Users seeded successfully!");
     }
 }

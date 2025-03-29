@@ -13,14 +13,10 @@ class RolePermissionSeeder extends Seeder
         // Define roles
         $roles = [
             'admin' => [
-                'manage users',
-                'manage',
-                'edit',
-                'delete',
-                'view analytics'
+                'manage all',
             ],
-            'guest' => [
-                'view',
+            'judge' => [
+                'moderator'
             ]
         ];
 
