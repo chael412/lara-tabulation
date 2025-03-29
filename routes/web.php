@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Page\AdminUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -19,9 +20,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
-    Route::get('hello', function () {
-        return "hello world";
-    });
+    Route::resource('user', AdminUserController::class);
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
@@ -36,4 +35,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
