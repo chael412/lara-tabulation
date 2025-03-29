@@ -1,3 +1,4 @@
+import { AiFillAndroid } from "react-icons/ai";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import {
