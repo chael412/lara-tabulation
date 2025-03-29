@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Page\AdminUserController;
+use App\Http\Controllers\Page\JudgeCategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +25,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
-    Route::get('hello', function () {
-        return "hello world";
-    });
+    Route::get('productionnumber', [JudgeCategoryController::class, 'getProductionNumber'])->name('productionnumber');
 });
 
 Route::middleware('auth')->group(function () {
