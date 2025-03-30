@@ -8,10 +8,10 @@ import { Button } from "@/Components/ui/button";
 import JudgeSignature from "@/Components/JudgeSignature";
 import { ClipLoader } from "react-spinners";
 
-const ProductionNumber = () => {
+const JeanWear = () => {
     const { data, error, isLoading } = useFetchData(
-        ["candidatec1"],
-        "production_ranking"
+        ["candidatec2"],
+        "jean_ranking"
     );
 
     console.log(data);
@@ -32,11 +32,11 @@ const ProductionNumber = () => {
         <AuthenticatedLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Production Number
+                    Jeans Wear
                 </h2>
             }
         >
-            <Head title="Production Number" />
+            <Head title="Jeans Wear" />
             <div>
                 <div className="flex justify-end m-2">
                     <Button onClick={() => reactToPrintFn()}>
@@ -71,7 +71,7 @@ const ProductionNumber = () => {
                                         colSpan={12}
                                         className="px-4 pt-4 text-center text-black text-xl font-light bg-white border-b border-black"
                                     >
-                                        Production Number 10%
+                                        Jeans Wear 10%
                                     </th>
                                 </tr>
                             </thead>
@@ -160,4 +160,4 @@ const ProductionNumber = () => {
     );
 };
 
-export default ProductionNumber;
+export default JeanWear;

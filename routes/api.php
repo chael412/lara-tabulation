@@ -16,7 +16,8 @@ Route::middleware(['auth', 'web'])->group(function () {
     //Route::get('single_score1', [ScoreController::class, 'getScoreRound1']);
     //Route::get('overall_score1', [ScoreController::class, 'getCandidateRanking']);
 
-    Route::get('attire_ranking1', [ScoreController::class, 'attireRanking']);
+    Route::get('production_ranking', [ScoreController::class, 'productionRanking']);
+    Route::get('jean_ranking', [ScoreController::class, 'jeanRanking']);
 });
 
 

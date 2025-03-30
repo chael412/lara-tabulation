@@ -30,11 +30,11 @@ export function NavCategory({ categories }) {
                     <SidebarMenuItem key={category.title}>
                         <SidebarMenuButton
                             asChild
-                            className={`w-full text-left px-4 py-2 rounded-md transition hover:bg-yellow-400
+                            className={`w-full text-left px-4 py-2 rounded-md transition hover:bg-blue-300
                         ${
                             category.isActive
-                                ? "bg-yellow-400 text-black"
-                                : "text-yellow-50"
+                                ? "bg-blue-400 text-black"
+                                : "text-blue-50"
                         }
                     `}
                         >

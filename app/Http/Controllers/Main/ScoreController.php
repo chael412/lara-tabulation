@@ -10,12 +10,60 @@ use App\Http\Requests\UpdateScoreRequest;
 
 class ScoreController extends Controller
 {
-    public function attireRanking()
+
+    public function jeanRanking()
     {
-        // Get all candidates with scores only for category_id = 1
+        // Filter by category 2
         $candidates = Candidate::with([
             'scores' => function ($query) {
-                $query->where('category_id', 1); // Filter by category 1
+                $query->where('category_id', 2);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+
+    public function productionRanking()
+    {
+        // Filter by category 1
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 1);
             },
             'scores.user'
         ])->get();

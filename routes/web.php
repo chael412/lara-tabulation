@@ -25,6 +25,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::resource('user', AdminUserController::class);
 
     Route::get('productionnumber', [AdminCategoryController::class, 'getProductionNumber'])->name('admin.productionnumber');
+    Route::get('jean', [AdminCategoryController::class, 'getJeanWear'])->name('admin.jean');
+    Route::get('festival', [AdminCategoryController::class, 'getFestivalAttire'])->name('admin.festival');
+    Route::get('casual', [AdminCategoryController::class, 'getCasualWear'])->name('admin.casual');
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {

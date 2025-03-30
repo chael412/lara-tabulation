@@ -16,7 +16,6 @@ import {
 
 import { NavMain } from "@/components/nav-main";
 import { NavCategory } from "@/components/nav-category";
-import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import { TeamSwitcher } from "@/components/team-switcher";
 import {
@@ -52,9 +51,9 @@ export function AppSidebar({ ...props }) {
         navCategory: [
             {
                 title: "Prodcution Number",
-                url: route("productionnumber"),
+                url: route("admin.productionnumber"),
                 icon: LayoutDashboard,
-                isActive: url === route("productionnumber", {}, false),
+                isActive: url === route("admin.productionnumber", {}, false),
             },
             {
                 title: "Jeans Wear",

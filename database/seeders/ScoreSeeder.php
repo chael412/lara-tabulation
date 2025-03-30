@@ -15,7 +15,7 @@ class ScoreSeeder extends Seeder
         $candidates = range(1, 10); // Candidate IDs: 1 to 7
         $users = range(2, 8); // User IDs: 2 to 8 (Judges)
         $categories = [
-            1 => 10, // Example: Category 1 has a max score of 10
+            2 => 10, // Example: Category 1 has a max score of 10
         ];
         $round = 1; // Example: Round 1
 

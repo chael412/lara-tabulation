@@ -32,8 +32,8 @@ export function NavMain({ items }) {
                             className={`w-full text-left px-4 py-2 rounded-sm transition hover:bg-blue-300
                         ${
                             item.isActive
-                                ? "bg-yellow-400 text-black"
-                                : "text-yellow-50"
+                                ? "bg-blue-400 text-black"
+                                : "text-blue-50"
                         }
                     `}
                         >

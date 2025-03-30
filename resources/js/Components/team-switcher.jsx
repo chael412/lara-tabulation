@@ -28,10 +28,7 @@ export function TeamSwitcher({ teams }) {
     return (
         <SidebarMenu>
             <SidebarMenuItem>
-                <SidebarMenuButton
-                    size="lg"
-                    className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-                >
+                <div className="flex gap-2 items-center bg-yellow-500 py-1 px-2">
                     <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                         <img src="/img/piton-logo.png" alt="piton-logo" />
                     </div>
@@ -40,7 +37,7 @@ export function TeamSwitcher({ teams }) {
                             Piton Tabulation
                         </span>
                     </div>
-                </SidebarMenuButton>
+                </div>
             </SidebarMenuItem>
         </SidebarMenu>
     );
