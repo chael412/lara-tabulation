@@ -28,6 +28,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class
         ]);
 
-        Candidate::factory()->count(7)->create();
+        Candidate::factory()->count(10)->create();
     }
 }

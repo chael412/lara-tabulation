@@ -5,8 +5,6 @@
 @import "@fontsource/great-vibes";
 @import "@fontsource/lobster";
 
-
-
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -34,8 +32,7 @@
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
-        ;
-        --sidebar-background: 224, 76%, 48%; /* Dark Blue */
+        --sidebar-background: 209, 100%, 40%; /* Dark Blue */
         --sidebar-foreground: 220 80% 10%; /* Deep Blue Text */
         --sidebar-primary: 220 50% 40%; /* Primary Blue */
         --sidebar-primary-foreground: 0 0% 100%; /* White */
@@ -43,7 +40,6 @@
         --sidebar-accent-foreground: 220 80% 10%; /* Deep Blue */
         --sidebar-border: 220 30% 50%; /* Medium Blue */
         --sidebar-ring: 220 90% 35%; /* Vibrant Blue */
-
     }
     .dark {
         --background: 20 14.3% 4.1%;
