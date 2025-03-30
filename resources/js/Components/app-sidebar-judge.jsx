@@ -6,6 +6,7 @@ import {
     Command,
     Frame,
     GalleryVerticalEnd,
+    House,
     LayoutDashboard,
     Map,
     PieChart,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
+import { NavCategory } from "@/components/nav-category";
 import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import { TeamSwitcher } from "@/components/team-switcher";
@@ -42,9 +44,12 @@ export function AppSidebar({ ...props }) {
             {
                 title: "Dashboard",
                 url: route("dashboard"),
-                icon: LayoutDashboard,
+                icon: House,
                 isActive: url === route("dashboard", {}, false),
             },
+        ],
+
+        navCategory: [
             {
                 title: "Prodcution Number",
                 url: route("productionnumber"),
@@ -108,7 +113,7 @@ export function AppSidebar({ ...props }) {
                 <TeamSwitcher teams={data.teams} />
             </SidebarHeader>
             <SidebarContent>
-                <NavMain items={data.navMain} />
+                <NavCategory categories={data.navCategory} />
             </SidebarContent>
             <SidebarFooter>
                 <NavUser user={user} />

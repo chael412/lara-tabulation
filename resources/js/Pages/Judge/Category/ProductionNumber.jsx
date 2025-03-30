@@ -37,7 +37,7 @@ export default function Page() {
             }
         >
             <Head title="Dashboard" />
-            <div className="flex justify-center items-center mt-20 px-6">
+            <div className="flex justify-center items-center mt-16 px-6">
                 <div className="p-10 bg-gray-100 rounded-xl border border-gray-600 shadow-lg w-full max-w-4xl text-center">
                     <p className="text-3xl font-semibold mb-6">
                         Production Number 10%

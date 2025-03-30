@@ -17,30 +17,31 @@ import {
     SidebarMenuSubButton,
     SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { Link } from "@inertiajs/react";
 
-export function NavMain({ items }) {
+export function NavCategory({ categories }) {
     return (
         <SidebarGroup>
             <SidebarGroupLabel className="text-yellow-400">
-                Menu
+                Category
             </SidebarGroupLabel>
             <SidebarMenu>
-                {items.map((item) => (
-                    <SidebarMenuItem key={item.title}>
+                {categories.map((category) => (
+                    <SidebarMenuItem key={category.title}>
                         <SidebarMenuButton
                             asChild
-                            className={`w-full text-left px-4 py-2 rounded-sm transition hover:bg-blue-300
+                            className={`w-full text-left px-4 py-2 rounded-md transition hover:bg-yellow-400
                         ${
-                            item.isActive
+                            category.isActive
                                 ? "bg-yellow-400 text-black"
                                 : "text-yellow-50"
                         }
                     `}
                         >
-                            <a href={item.url}>
-                                <item.icon />
-                                <span>{item.title}</span>
-                            </a>
+                            <Link href={category.url}>
+                                <category.icon />
+                                <span>{category.title}</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 ))}

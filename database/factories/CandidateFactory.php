@@ -14,11 +14,17 @@ class CandidateFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected static $counter = 1;
+
     public function definition(): array
     {
+        // Ensure the counter cycles from 1 to 7
+        $number = self::$counter;
+        self::$counter = self::$counter < 7 ? self::$counter + 1 : 1;
+
         return [
-            'candidate_number' => $this->faker->numberBetween(1, 7),
-            'candidate_name' => $this->faker->firstNameFemale . ' ' . $this->faker->lastName,
+            'candidate_number' => $number,
+            'candidate_name' => fake()->firstNameFemale . ' ' . fake()->lastName,
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Page\AdminCategoryController;
 use App\Http\Controllers\Page\AdminUserController;
 use App\Http\Controllers\Page\JudgeCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::resource('user', AdminUserController::class);
+
+    Route::get('productionnumber', [AdminCategoryController::class, 'getProductionNumber'])->name('admin.productionnumber');
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {

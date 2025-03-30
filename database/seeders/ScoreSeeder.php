@@ -36,7 +36,7 @@ class ScoreSeeder extends Seeder
                 'candidate_id' => $candidate_id,
                 'user_id' => $users[array_rand($users)],
                 'category_id' => $category_id,
-                'score' => rand(0, $max_score),
+                'score' => rand(5, $max_score),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
