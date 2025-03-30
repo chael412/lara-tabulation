@@ -1,5 +1,8 @@
 import useFetchData from "@/hooks/useFetchData";
-import React from "react";
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayoutAdmin";
+import { Head } from "@inertiajs/react";
 
 const ProductionNumber = () => {
     const { data, error, isLoading } = useFetchData(
@@ -18,100 +21,143 @@ const ProductionNumber = () => {
         .map(([id, judgeData]) => ({ id, name: judgeData.judge_name }))
         .sort((a, b) => a.id - b.id);
 
+    const contentRef = useRef();
+    const reactToPrintFn = useReactToPrint({ contentRef });
+
     return (
-        <div className="p-8 bg-white rounded-xl shadow-sm">
-            <div className="overflow-x-auto rounded-sm border border-gray-200">
-                <table className="min-w-[800px] w-full bg-[#ffff99]">
-                    <thead>
-                        <tr>
-                            <th
-                                colSpan={12}
-                                className=" px-4 pt-4 text-center text-yellow-200 font-light bg-gray-800 border-b border-black font-lobster"
-                            >
-                                <span className="text-6xl ">
-                                    Queen San Vicente 2025{" "}
-                                </span>
-                                <br />
-                                <br />
-                                <span className="text-5xl ">
-                                    Grand Coronation Night
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
+        <AuthenticatedLayout
+            header={
+                <h2 className="text-xl font-semibold leading-tight text-gray-800">
+                    Production Number
+                </h2>
+            }
+        >
+            <Head title="Production Number" />
 
-                    <thead>
-                        <tr>
-                            <th
-                                colSpan={12}
-                                className="px-4 pt-4 text-center text-black text-3xl font-light bg-white border-b border-black"
-                            >
-                                Production Number 10%
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <thead>
-                        <tr>
-                            <th className="w-[12%] bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
-                                Candidate No.
-                            </th>
-                            {sortedJudges.map((judge) => (
+            <button onClick={() => reactToPrintFn()}>Print</button>
+            <div ref={contentRef} className="py-2 px-4 bg-white ">
+                <div className="overflow-x-auto rounded-sm border border-black">
+                    <table className="min-w-[800px] w-full bg-[#ffff99]">
+                        <thead>
+                            <tr>
                                 <th
-                                    key={judge.id}
-                                    className=" bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black"
+                                    colSpan={12}
+                                    className="pt-3 pb-2 text-center text-yellow-200 font-light bg-gray-800 border-b border-black font-lobster"
                                 >
-                                    {judge.name}
+                                    <span className="text-4xl">
+                                        Queen San Vicente 2025
+                                    </span>
+                                    <br />
+                                    <br />
+                                    <span className="text-2xl ">
+                                        Grand Coronation Night
+                                    </span>
                                 </th>
-                            ))}
-                            <th className="bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
-                                Total
-                            </th>
-                            <th className="bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
-                                Average
-                            </th>
-                            <th className="bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
-                                Rank
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data?.candidates?.map((candidate) => (
-                            <tr
-                                key={candidate.candidate_id}
-                                className=" border-b border-black"
-                            >
-                                <td className="px-4 py-3 text-gray-800 font-medium">
-                                    {candidate.candidate_number}
-                                </td>
-                                {sortedJudges.map((judge) => {
-                                    const score =
-                                        candidate.scores_per_judge[judge.id]
-                                            ?.scores?.[0];
-                                    return (
-                                        <td
-                                            key={judge.id}
-                                            className="px-4 py-2 text-black"
-                                        >
-                                            {score ?? "-"}
-                                        </td>
-                                    );
-                                })}
-                                <td className="px-4 py-2 text-black font-medium">
-                                    {candidate.total_score}
-                                </td>
-                                <td className="px-4 py-2 text-black font-medium">
-                                    {Number(candidate.average_score).toFixed(2)}
-                                </td>
-                                <td className="px-4 py-2 text-black text-md font-semibold">
-                                    {candidate.rank}
-                                </td>
                             </tr>
+                        </thead>
+
+                        <thead>
+                            <tr>
+                                <th
+                                    colSpan={12}
+                                    className="px-4 pt-4 text-center text-black text-xl font-light bg-white border-b border-black"
+                                >
+                                    Production Number 10%
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <thead>
+                            <tr>
+                                <th className="text-nowrap w-[10%] bg-[#ffff99] px-4 pt-6  text-left  text-black text-custom-sm font-bold border-b border-black">
+                                    Candidate No.
+                                </th>
+                                {sortedJudges.map((judge) => (
+                                    <th
+                                        key={judge.id}
+                                        className=" text-nowrap bg-[#ffff99] px-4 pt-6 text-left  text-black text-custom-sm font-bold  border-b border-black"
+                                    >
+                                        {judge.name}
+                                    </th>
+                                ))}
+                                <th className="text-nowrap bg-[#ffff99] px-4 pt-6 text-left  text-black text-custom-sm font-bold  border-b border-black">
+                                    Total
+                                </th>
+                                <th className="text-nowrap bg-[#ffff99] px-4 pt-6 text-left  text-black text-custom-sm font-bold  border-b border-black">
+                                    Average
+                                </th>
+                                <th className="text-nowrap bg-[#ffff99] px-4 pt-6 text-left  text-black text-custom-sm font-bold  border-b border-black">
+                                    Rank
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data?.candidates?.map((candidate) => (
+                                <tr
+                                    key={candidate.candidate_id}
+                                    className="border-b border-black last:border-b-0"
+                                >
+                                    <td className="px-4 py-2 text-black text-custom-sm font-medium">
+                                        {candidate.candidate_number}
+                                    </td>
+                                    {sortedJudges.map((judge) => {
+                                        const score =
+                                            candidate.scores_per_judge[judge.id]
+                                                ?.scores?.[0];
+                                        return (
+                                            <td
+                                                key={judge.id}
+                                                className="px-4 py-2 text-black text-custom-sm font-medium"
+                                            >
+                                                {score ?? "-"}
+                                            </td>
+                                        );
+                                    })}
+                                    <td className="px-4 py-2 text-black text-custom-sm font-medium">
+                                        {candidate.total_score}
+                                    </td>
+                                    <td className="px-4 py-2 text-black text-custom-sm font-medium">
+                                        {Number(
+                                            candidate.average_score
+                                        ).toFixed(2)}
+                                    </td>
+                                    <td className="px-4 py-2 text-black text-md font-semibold">
+                                        {candidate.rank}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="mt-16">
+                    {/* First Row - 4 Signature Lines */}
+                    <div className="grid grid-cols-4 gap-6 mb-10">
+                        {[...Array(4)].map((_, index) => (
+                            <div
+                                key={index}
+                                className="flex flex-col items-center"
+                            >
+                                <div className="w-48 border-t-2 border-black"></div>
+                                <p className="text-sm mt-1">Judge{index + 1}</p>
+                            </div>
                         ))}
-                    </tbody>
-                </table>
+                    </div>
+
+                    {/* Second Row - 3 Signature Lines */}
+                    <div className="grid grid-cols-3 gap-6">
+                        {[...Array(3)].map((_, index) => (
+                            <div
+                                key={index}
+                                className="flex flex-col items-center"
+                            >
+                                <div className="w-48 border-t-2 border-black"></div>
+                                <p className="text-sm mt-1">Judge{index + 5}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-        </div>
+        </AuthenticatedLayout>
     );
 };
 

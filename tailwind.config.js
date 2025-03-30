@@ -13,6 +13,9 @@ export default {
 
     theme: {
     	extend: {
+            fontSize: {
+                'custom-sm': '14px', // Custom font size
+              },
     		fontFamily: {
     			sans: [
     				'Figtree',
