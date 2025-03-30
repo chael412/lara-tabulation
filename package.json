@@ -22,6 +22,9 @@
         "vite": "^6.0.11"
     },
     "dependencies": {
+        "@fontsource/dancing-script": "^5.2.5",
+        "@fontsource/great-vibes": "^5.2.5",
+        "@fontsource/lobster": "^5.2.5",
         "@radix-ui/react-avatar": "^1.1.3",
         "@radix-ui/react-collapsible": "^1.1.3",
         "@radix-ui/react-dialog": "^1.1.6",

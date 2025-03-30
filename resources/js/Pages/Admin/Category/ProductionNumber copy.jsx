@@ -20,66 +20,41 @@ const ProductionNumber = () => {
 
     return (
         <div className="p-8 bg-white rounded-xl shadow-sm">
-            <div className="overflow-x-auto rounded-sm border border-gray-200">
+            <h2 className="text-2xl text-gray-800 mb-6 font-semibold">
+                Production Number Scores
+            </h2>
+            <div className="overflow-x-auto rounded-md border border-gray-200">
                 <table className="min-w-[800px] w-full bg-[#ffff99]">
                     <thead>
                         <tr>
-                            <th
-                                colSpan={12}
-                                className=" px-4 pt-4 text-center text-yellow-200 font-light bg-gray-800 border-b border-black font-lobster"
-                            >
-                                <span className="text-6xl ">
-                                    Queen San Vicente 2025{" "}
-                                </span>
-                                <br />
-                                <br />
-                                <span className="text-5xl ">
-                                    Grand Coronation Night
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <thead>
-                        <tr>
-                            <th
-                                colSpan={12}
-                                className="px-4 pt-4 text-center text-black text-3xl font-light bg-white border-b border-black"
-                            >
-                                Production Number 10%
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <thead>
-                        <tr>
-                            <th className="w-[12%] bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
-                                Candidate No.
+                            <th className="bg-[#ffff99] px-4 py-10 text-left text-black font-semibold border-b-2 border-gray-200">
+                                Candidate
                             </th>
                             {sortedJudges.map((judge) => (
                                 <th
                                     key={judge.id}
-                                    className=" bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black"
+                                    className="bg-[#ffff99] px-4 py-10 text-left text-black font-semibold border-b-2 border-gray-200"
                                 >
                                     {judge.name}
                                 </th>
                             ))}
-                            <th className="bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
+                            <th className="bg-[#ffff99] px-4 py-10 text-left text-black font-semibold border-b-2 border-gray-200">
                                 Total
                             </th>
-                            <th className="bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
+                            <th className="bg-[#ffff99] px-4 py-10 text-left text-black font-semibold border-b-2 border-gray-200">
                                 Average
                             </th>
-                            <th className="bg-[#ffff99] px-4 pt-8 text-left  text-black font-semibold border-b border-black">
+                            <th className="bg-[#ffff99] px-4 py-10 text-left text-black font-semibold border-b-2 border-gray-200">
                                 Rank
                             </th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {data?.candidates?.map((candidate) => (
                             <tr
                                 key={candidate.candidate_id}
-                                className=" border-b border-black"
+                                className="hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100"
                             >
                                 <td className="px-4 py-3 text-gray-800 font-medium">
                                     {candidate.candidate_number}
@@ -97,13 +72,13 @@ const ProductionNumber = () => {
                                         </td>
                                     );
                                 })}
-                                <td className="px-4 py-2 text-black font-medium">
+                                <td className="px-4 py-2 text-gray-800 font-semibold">
                                     {candidate.total_score}
                                 </td>
-                                <td className="px-4 py-2 text-black font-medium">
+                                <td className="px-4 py-2 text-green-500 font-medium">
                                     {Number(candidate.average_score).toFixed(2)}
                                 </td>
-                                <td className="px-4 py-2 text-black text-md font-semibold">
+                                <td className="px-4 py-2 text-blue-700 text-md font-medium">
                                     {candidate.rank}
                                 </td>
                             </tr>

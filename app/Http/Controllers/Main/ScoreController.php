@@ -36,6 +36,7 @@ class ScoreController extends Controller
 
             $candidateScores[] = [
                 'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
                 'candidate_name' => $candidate->candidate_name,
                 'scores_per_judge' => $scoresPerJudge,
                 'total_score' => $totalScore,

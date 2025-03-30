@@ -17,7 +17,10 @@ export default {
     			sans: [
     				'Figtree',
                     ...defaultTheme.fontFamily.sans
-                ]
+                ],
+                cursive: ['"Dancing Script"', "cursive"],
+                vibes: ['"Great Vibes"', "cursive"],
+                lobster: ['"Lobster"', "cursive"],
     		},
     		borderRadius: {
     			lg: 'var(--radius)',
