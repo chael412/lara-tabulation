@@ -3,12 +3,61 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use App\Models\Score;
 use App\Http\Requests\StoreScoreRequest;
 use App\Http\Requests\UpdateScoreRequest;
 
 class ScoreController extends Controller
 {
+    public function attireRanking()
+    {
+        // Get all candidates with scores only for category_id = 1
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 1); // Filter by category 1
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+
+
+
 
 
     public function getScoreRound1()
@@ -29,31 +78,31 @@ class ScoreController extends Controller
         return response()->json($scores, 200);
     }
 
-    public function attireRanking()
-    {
-        $candidates = Score::with('candidate', 'category')
-            ->select('candidate_id', 'category_id') // Include category_id
-            ->selectRaw('ROUND(SUM((score / 100) * categories.percentage), 2) as total_score')
-            ->selectRaw('ROUND(AVG((score / 100) * categories.percentage), 2) as average_score')
-            ->join('categories', 'scores.category_id', '=', 'categories.id')
-            ->where('scores.category_id', 1) // Filter only category 1
-            ->groupBy('candidate_id', 'category_id')
-            ->orderByDesc('total_score')
-            ->get();
+    // public function attireRanking()
+    // {
+    //     $candidates = Score::with('candidate', 'category')
+    //         ->select('candidate_id', 'category_id') // Include category_id
+    //         ->selectRaw('ROUND(SUM((score / 100) * categories.percentage), 2) as total_score')
+    //         ->selectRaw('ROUND(AVG((score / 100) * categories.percentage), 2) as average_score')
+    //         ->join('categories', 'scores.category_id', '=', 'categories.id')
+    //         ->where('scores.category_id', 1) // Filter only category 1
+    //         ->groupBy('candidate_id', 'category_id')
+    //         ->orderByDesc('total_score')
+    //         ->get();
 
 
 
-        // Assign ranks
-        $rank = 1;
-        foreach ($candidates as $key => $candidate) {
-            if ($key > 0 && $candidate->total_score < $candidates[$key - 1]->total_score) {
-                $rank = $key + 1;
-            }
-            $candidate->rank = $rank;
-        }
+    //     // Assign ranks
+    //     $rank = 1;
+    //     foreach ($candidates as $key => $candidate) {
+    //         if ($key > 0 && $candidate->total_score < $candidates[$key - 1]->total_score) {
+    //             $rank = $key + 1;
+    //         }
+    //         $candidate->rank = $rank;
+    //     }
 
-        return response()->json($candidates, 200);
-    }
+    //     return response()->json($candidates, 200);
+    // }
 
     // public function getCandidateRanking()
     // {

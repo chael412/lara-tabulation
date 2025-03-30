@@ -9,6 +9,12 @@ use Inertia\Inertia;
 
 class AdminUserController extends Controller
 {
+    public function getDashboard()
+    {
+        return Inertia::render('Admin/Dashboard');
+    }
+
+
     /**
      * Display a listing of the resource.
      */

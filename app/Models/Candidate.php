@@ -9,4 +9,16 @@ class Candidate extends Model
 {
     /** @use HasFactory<\Database\Factories\CandidateFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'candidate_number',
+        'candidate_name'
+
+    ];
+
+
+    public function scores()
+    {
+        return $this->hasMany(Score::class);
+    }
 }

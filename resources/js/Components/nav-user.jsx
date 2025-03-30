@@ -26,11 +26,17 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar";
 import { useInitials } from "@/hooks/use-initials";
-import { Link } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
 
 export function NavUser({ user }) {
     const { isMobile } = useSidebar();
     const getInitials = useInitials();
+    const { post } = useForm();
+
+    const handleLogout = (event) => {
+        event.preventDefault();
+        post(route("logout"));
+    };
 
     return (
         <SidebarMenu>
@@ -91,24 +97,23 @@ export function NavUser({ user }) {
                         <DropdownMenuSeparator />
 
                         <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
+                        {/* <DropdownMenuGroup>
                             <Link href={route("profile.edit")}>
                                 <DropdownMenuItem className="cursor-pointer">
                                     <BadgeCheck />
                                     Account
                                 </DropdownMenuItem>
                             </Link>
-                        </DropdownMenuGroup>
+                        </DropdownMenuGroup> */}
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem lassName="cursor-pointer">
-                            <Link
-                                href={route("logout")}
-                                method="post"
-                                className="flex  gap-2"
-                            >
+                        <DropdownMenuItem
+                            className="cursor-pointer"
+                            onClick={handleLogout}
+                        >
+                            <div className="flex  gap-2">
                                 <LogOut className="w-4" />
                                 Log out
-                            </Link>
+                            </div>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

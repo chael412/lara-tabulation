@@ -13,10 +13,10 @@ Route::get('/user', function (Request $request) {
 Route::middleware(['auth', 'web'])->group(function () {
     Route::resource('users', UserController::class);
 
-    Route::get('single_score1', [ScoreController::class, 'getScoreRound1']);
-    Route::get('overall_score1', [ScoreController::class, 'getCandidateRanking']);
+    //Route::get('single_score1', [ScoreController::class, 'getScoreRound1']);
+    //Route::get('overall_score1', [ScoreController::class, 'getCandidateRanking']);
 
-    Route::get('attire_ranking', [ScoreController::class, 'attireRanking']);
+    Route::get('attire_ranking1', [ScoreController::class, 'attireRanking']);
 });
 
 
