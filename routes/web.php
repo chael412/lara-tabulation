@@ -40,6 +40,8 @@ Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
     Route::get('qanda', [JudgeCategoryController::class, 'getQandA'])->name('qanda');
     Route::get('swimsuit', [JudgeCategoryController::class, 'getSwimsuit'])->name('swimsuit');
     Route::get('talent', [JudgeCategoryController::class, 'getTalent'])->name('talent');
+
+
 });
 
 Route::middleware('auth')->group(function () {
