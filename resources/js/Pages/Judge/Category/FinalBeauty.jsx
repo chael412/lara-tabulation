@@ -17,8 +17,8 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 
-export default function Page({ scores }) {
-    const contestants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export default function Page({ scores = [] }) {
+    const contestants = [1, 2, 3, 4, 5];
     const { register, handleSubmit } = useForm();
     const user = usePage().props.auth.user;
 
@@ -30,7 +30,7 @@ export default function Page({ scores }) {
             ...data,
             category_id: 9,
             user_id: user.id,
-            percentage: 5,
+            percentage: 40,
         };
 
         setFormData(formattedData); // Store form data
@@ -48,7 +48,6 @@ export default function Page({ scores }) {
 
             console.log("Server Response:", response.data);
             toast("Score has been submitted successfully!");
-
             window.location.reload();
         } catch (error) {
             console.error(
@@ -72,7 +71,9 @@ export default function Page({ scores }) {
             <Head title="Dashboard" />
             <div className="flex justify-center items-center my-16 px-6">
                 <div className="p-10 bg-gray-100 rounded-xl border border-gray-600 shadow-lg w-full max-w-4xl text-center">
-                    <p className="text-3xl font-semibold mb-6">Beauty 5%</p>
+                    <p className="text-3xl font-semibold mb-6">
+                        Final Beauty 40%
+                    </p>
                     <form onSubmit={handleSubmit(handleFormSubmit)}>
                         <CategoryTable
                             contestants={contestants}

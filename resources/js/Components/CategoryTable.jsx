@@ -2,7 +2,16 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const CategoryTable = ({ contestants, register = () => {} }) => {
+const CategoryTable = ({
+    contestants,
+    register = () => {},
+    candidate_scores = {},
+}) => {
+    const candidateScores = {};
+    candidate_scores.forEach((item, index) => {
+        candidateScores[`score-${index}`] = item.score;
+    });
+
     return (
         <div className="rounded-xl bg-white shadow-lg p-6">
             <table className="w-full">
@@ -36,21 +45,25 @@ const CategoryTable = ({ contestants, register = () => {} }) => {
                                     className="max-w-[200px] text-lg py-5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                     min="0"
                                     max="100"
+                                    defaultValue={
+                                        candidateScores[`score-${index}`] || 0
+                                    }
                                 />
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-
-            <div className="mt-6 flex items-center justify-center">
-                <Button
-                    type="submit"
-                    className=" py-6 w-96 text-lg bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
-                >
-                    Submit Scores
-                </Button>
-            </div>
+            {Object.keys(candidateScores).length === 0 && (
+                <div className="mt-6 flex items-center justify-center">
+                    <Button
+                        type="submit"
+                        className="py-6 w-96 text-lg bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
+                    >
+                        Submit Scores
+                    </Button>
+                </div>
+            )}
         </div>
     );
 };
