@@ -12,8 +12,8 @@ class Candidate extends Model
 
     protected $fillable = [
         'candidate_number',
-        'candidate_name'
-
+        'candidate_name',
+        'top_five'
     ];
 
 

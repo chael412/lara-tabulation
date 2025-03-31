@@ -8,13 +8,14 @@ use Inertia\Inertia;
 
 class AdminCategoryController extends Controller
 {
-    public function getQATopFive()
+
+    public function getQAFinal()
     {
-        return Inertia::render('Admin/Category/QATopFive');
+        return Inertia::render('Admin/Category/FinalQA');
     }
-    public function getBeautyTopFive()
+    public function getBeautyFinal()
     {
-        return Inertia::render('Admin/Category/BeautyTopFive');
+        return Inertia::render('Admin/Category/FinalBeauty');
     }
     public function getBeauty()
     {

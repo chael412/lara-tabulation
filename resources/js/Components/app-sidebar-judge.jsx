@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavCategory } from "@/components/nav-category";
+import { NavCategory } from "@/Components/nav-category-admin";
 import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import { TeamSwitcher } from "@/components/team-switcher";
@@ -113,6 +113,7 @@ export function AppSidebar({ ...props }) {
                 <TeamSwitcher teams={data.teams} />
             </SidebarHeader>
             <SidebarContent>
+                <NavMain items={data.navMain} />
                 <NavCategory categories={data.navCategory} />
             </SidebarContent>
             <SidebarFooter>

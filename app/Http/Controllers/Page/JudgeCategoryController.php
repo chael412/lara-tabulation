@@ -9,6 +9,10 @@ use Inertia\Inertia;
 
 class JudgeCategoryController extends Controller
 {
+    public function getDashboard()
+    {
+        return Inertia::render('Judge/Dashboard');
+    }
     public function getProductionNumber()
     {
         return Inertia::render('Judge/Category/ProductionNumber');
@@ -49,33 +53,33 @@ class JudgeCategoryController extends Controller
 
     public function storeProductionNumber(Request $request)
     {
-            $data = $request->all();
+        $data = $request->all();
 
-            $scores = [];
+        $scores = [];
 
-            // Loop through the received data to extract scores
-            foreach ($data as $key => $value) {
-                if (strpos($key, 'score-') === 0) {
-                    // Extract the candidate number from "score-X"
-                    $candidateNumber = str_replace('score-', '', $key);
-                    $average = round(($value / 100) * $data['percentage'], 2);
-                    // Prepare an array for bulk insertion
-                    $scores[] = [
-                        'category_id' => $data['category_id'],
-                        'user_id' => $data['user_id'],
-                        'candidate_id' => (int) $candidateNumber + 1, // Adjusting candidate numbering
-                        'round' => 1,
-                        'score' => $average,
-                    ];
-                }
+        // Loop through the received data to extract scores
+        foreach ($data as $key => $value) {
+            if (strpos($key, 'score-') === 0) {
+                // Extract the candidate number from "score-X"
+                $candidateNumber = str_replace('score-', '', $key);
+                $average = round(($value / 100) * $data['percentage'], 2);
+                // Prepare an array for bulk insertion
+                $scores[] = [
+                    'category_id' => $data['category_id'],
+                    'user_id' => $data['user_id'],
+                    'candidate_id' => (int) $candidateNumber + 1, // Adjusting candidate numbering
+                    'round' => 1,
+                    'score' => $average,
+                ];
             }
-            Score::insert($scores);
+        }
+        Score::insert($scores);
 
-            // Return JSON response (for debugging)
-            return response()->json([
-                'message' => 'Data received successfully!',
-                'data' => $data,
-                'data3' => $scores
-            ], 200);
+        // Return JSON response (for debugging)
+        return response()->json([
+            'message' => 'Data received successfully!',
+            'data' => $data,
+            'data3' => $scores
+        ], 200);
     }
 }

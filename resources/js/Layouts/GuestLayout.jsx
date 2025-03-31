@@ -12,7 +12,7 @@ export default function GuestLayout({ children }) {
                 {/* Right Side - Image */}
                 <div className="hidden md:block">
                     <img
-                        src="/img/solo_leveling1.jpeg"
+                        src="/img/new-ceat.jpg"
                         alt="Auth Page Image"
                         className="h-full w-full object-cover"
                     />

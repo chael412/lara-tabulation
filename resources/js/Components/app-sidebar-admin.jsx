@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
     AudioWaveform,
+    Award,
     BookOpen,
     Bot,
     Command,
@@ -14,8 +15,8 @@ import {
     SquareTerminal,
 } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
-import { NavCategory } from "@/components/nav-category";
+import { NavMain } from "@/components/nav-main-admin";
+
 import { NavUser } from "@/components/nav-user";
 import { TeamSwitcher } from "@/components/team-switcher";
 import {
@@ -26,6 +27,8 @@ import {
     SidebarRail,
 } from "@/components/ui/sidebar";
 import { usePage } from "@inertiajs/react";
+import { NavFinal } from "./nav-final-admin";
+import { NavCategory } from "./nav-category-admin";
 
 export function AppSidebar({ ...props }) {
     const user = usePage().props.auth.user;
@@ -42,9 +45,9 @@ export function AppSidebar({ ...props }) {
         navMain: [
             {
                 title: "Dashboard",
-                url: route("dashboard"),
+                url: route("admin.dashboard"),
                 icon: House,
-                isActive: url === route("dashboard", {}, false),
+                isActive: url === route("admin.dashboard", {}, false),
             },
         ],
 
@@ -57,51 +60,60 @@ export function AppSidebar({ ...props }) {
             },
             {
                 title: "Jeans Wear",
-                url: route("jeanswear"),
+                url: route("admin.jean"),
                 icon: LayoutDashboard,
-                isActive: url === route("jeanswear", {}, false),
+                isActive: url === route("admin.jean", {}, false),
             },
             {
                 title: "Festival Attire",
-                url: route("festivalattire"),
+                url: route("admin.festival"),
                 icon: LayoutDashboard,
-                isActive: url === route("festivalattire", {}, false),
+                isActive: url === route("admin.festival", {}, false),
             },
             {
                 title: "Casual Wear",
-                url: route("casualwear"),
+                url: route("admin.casual"),
                 icon: LayoutDashboard,
-                isActive: url === route("casualwear", {}, false),
+                isActive: url === route("admin.casual", {}, false),
             },
             {
                 title: "Swimsuit",
-                url: route("swimsuit"),
+                url: route("admin.swimsuit"),
                 icon: LayoutDashboard,
-                isActive: url === route("swimsuit", {}, false),
+                isActive: url === route("admin.swimsuit", {}, false),
             },
             {
                 title: "Talent",
-                url: route("talent"),
+                url: route("admin.talent"),
                 icon: LayoutDashboard,
-                isActive: url === route("talent", {}, false),
+                isActive: url === route("admin.talent", {}, false),
             },
             {
                 title: "Gown",
-                url: route("gown"),
+                url: route("admin.gown"),
                 icon: LayoutDashboard,
-                isActive: url === route("gown", {}, false),
+                isActive: url === route("admin.gown", {}, false),
             },
             {
                 title: "Question And Answer",
-                url: route("qanda"),
+                url: route("admin.qa"),
                 icon: LayoutDashboard,
-                isActive: url === route("qanda", {}, false),
+                isActive: url === route("admin.qa", {}, false),
             },
             {
                 title: "Beauty",
-                url: route("beauty"),
+                url: route("admin.beauty"),
                 icon: LayoutDashboard,
-                isActive: url === route("beauty", {}, false),
+                isActive: url === route("admin.beauty", {}, false),
+            },
+        ],
+
+        navFinal: [
+            {
+                title: "Top 5 Beauty",
+                url: route("admin.beautyfinal"),
+                icon: Award,
+                isActive: url === route("admin.beautyfinal", {}, false),
             },
         ],
     };
@@ -114,6 +126,7 @@ export function AppSidebar({ ...props }) {
             <SidebarContent>
                 <NavMain items={data.navMain} />
                 <NavCategory categories={data.navCategory} />
+                <NavFinal finals={data.navFinal} />
             </SidebarContent>
             <SidebarFooter>
                 <NavUser user={user} />

@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->hasRole('admin');
     }
 
+    public function isJudge()
+    {
+        return $this->hasRole('judge');
+    }
+
     // Relationship: User has many Scores (as a judge)
     public function scores()
     {

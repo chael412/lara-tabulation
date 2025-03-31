@@ -23,8 +23,12 @@ export default function Page() {
             }
         >
             <Head title="Dashboard" />
-            <div className="flex justify-center mt-52">
-                <h2 className="text-8xl font-bold">PITON</h2>
+            <div className="flex justify-center items-center">
+                <h2 className="h-screen flex flex-col text-center text-[82px] font-light font-lobster mt-10">
+                    <span>Philippine Information</span>
+                    <span>Technology of the North</span>
+                    <span>PiTON </span>
+                </h2>
             </div>
         </AuthenticatedLayout>
     );

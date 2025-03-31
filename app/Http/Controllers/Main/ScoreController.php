@@ -10,6 +10,328 @@ use App\Http\Requests\UpdateScoreRequest;
 
 class ScoreController extends Controller
 {
+    public function beautyRanking()
+    {
+        // Filter by category 9
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 9);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+    public function qaRanking()
+    {
+        // Filter by category 8
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 8);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+    public function gownRanking()
+    {
+        // Filter by category 7
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 7);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+    public function talentRanking()
+    {
+        // Filter by category 6
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 6);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+    public function swimsuitRanking()
+    {
+        // Filter by category 5
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 5);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+    public function casualRanking()
+    {
+        // Filter by category 4
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 4);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+    public function festivalRanking()
+    {
+        // Filter by category 3
+        $candidates = Candidate::with([
+            'scores' => function ($query) {
+                $query->where('category_id', 3);
+            },
+            'scores.user'
+        ])->get();
+
+
+        $candidateScores = [];
+        foreach ($candidates as $candidate) {
+            $scoresPerJudge = $candidate->scores->groupBy('user_id')->map(function ($scores) {
+                return [
+                    'judge_name' => $scores->first()->user->name ?? 'Unknown',
+                    'scores' => $scores->pluck('score')
+                ];
+            });
+
+            // Calculate total and average score
+            $totalScore = $candidate->scores->sum('score');
+            $averageScore = $candidate->scores->avg('score');
+
+            $candidateScores[] = [
+                'candidate_id' => $candidate->id,
+                'candidate_number' => $candidate->candidate_number,
+                'candidate_name' => $candidate->candidate_name,
+                'scores_per_judge' => $scoresPerJudge,
+                'total_score' => $totalScore,
+                'average_score' => round($averageScore, 2),
+            ];
+        }
+
+        // Rank candidates based on total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['total_score'] <=> $a['total_score']);
+
+        // Assign ranking
+        foreach ($candidateScores as $index => &$candidate) {
+            $candidate['rank'] = $index + 1;
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
 
     public function jeanRanking()
     {

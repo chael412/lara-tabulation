@@ -8,10 +8,10 @@ import { Button } from "@/Components/ui/button";
 import JudgeSignature from "@/Components/JudgeSignature";
 import { ClipLoader } from "react-spinners";
 
-const FestivalAttire = () => {
+const Talent = () => {
     const { data, error, isLoading } = useFetchData(
-        ["candidatec3"],
-        "festival_ranking"
+        ["candidatec6"],
+        "talent_ranking"
     );
 
     console.log(data);
@@ -32,11 +32,11 @@ const FestivalAttire = () => {
         <AuthenticatedLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Festival Attire
+                    Talent
                 </h2>
             }
         >
-            <Head title="Festival Attire" />
+            <Head title="Talent" />
             <div>
                 <div className="flex justify-end m-2">
                     <Button onClick={() => reactToPrintFn()}>
@@ -71,7 +71,7 @@ const FestivalAttire = () => {
                                         colSpan={12}
                                         className="px-4 pt-4 text-center text-black text-xl font-light bg-white border-b border-black"
                                     >
-                                        Festival Attire 10%
+                                        Talent 15%
                                     </th>
                                 </tr>
                             </thead>
@@ -161,4 +161,4 @@ const FestivalAttire = () => {
     );
 };
 
-export default FestivalAttire;
+export default Talent;

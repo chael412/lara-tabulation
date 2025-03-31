@@ -9,12 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('Auth/Login');
 });
 
 Route::get('/dashboard', function () {
@@ -24,13 +19,26 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::resource('user', AdminUserController::class);
 
+    Route::get('dashboard', [AdminCategoryController::class, 'getDashboard'])->name('admin.dashboard');
+
+
+
     Route::get('productionnumber', [AdminCategoryController::class, 'getProductionNumber'])->name('admin.productionnumber');
     Route::get('jean', [AdminCategoryController::class, 'getJeanWear'])->name('admin.jean');
     Route::get('festival', [AdminCategoryController::class, 'getFestivalAttire'])->name('admin.festival');
     Route::get('casual', [AdminCategoryController::class, 'getCasualWear'])->name('admin.casual');
+    Route::get('swimsuit', [AdminCategoryController::class, 'getSwimsuit'])->name('admin.swimsuit');
+    Route::get('talent', [AdminCategoryController::class, 'getTalent'])->name('admin.talent');
+    Route::get('gown', [AdminCategoryController::class, 'getGown'])->name('admin.gown');
+    Route::get('qa', [AdminCategoryController::class, 'getQA'])->name('admin.qa');
+    Route::get('beauty', [AdminCategoryController::class, 'getBeauty'])->name('admin.beauty');
+
+    Route::get('beautyfinal', [AdminCategoryController::class, 'getBeautyFinal'])->name('admin.beautyfinal');
+    Route::get('qafinal', [AdminCategoryController::class, 'getQAFinal'])->name('admin.qafinal');
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
+
     Route::get('productionnumber', [JudgeCategoryController::class, 'getProductionNumber'])->name('productionnumber');
     Route::get('jeanswear', [JudgeCategoryController::class, 'getJeansWear'])->name('jeanswear');
     Route::get('casualwear', [JudgeCategoryController::class, 'getCasualWear'])->name('casualwear');
@@ -40,8 +48,6 @@ Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
     Route::get('qanda', [JudgeCategoryController::class, 'getQandA'])->name('qanda');
     Route::get('swimsuit', [JudgeCategoryController::class, 'getSwimsuit'])->name('swimsuit');
     Route::get('talent', [JudgeCategoryController::class, 'getTalent'])->name('talent');
-
-
 });
 
 Route::middleware('auth')->group(function () {

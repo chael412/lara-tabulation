@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Main\FinalScoreController;
 use App\Http\Controllers\Main\ScoreController;
 use App\Http\Controllers\Main\UserController;
 use App\Http\Controllers\Page\JudgeCategoryController;
@@ -18,6 +19,16 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     Route::get('production_ranking', [ScoreController::class, 'productionRanking']);
     Route::get('jean_ranking', [ScoreController::class, 'jeanRanking']);
+    Route::get('festival_ranking', [ScoreController::class, 'festivalRanking']);
+    Route::get('casual_ranking', [ScoreController::class, 'casualRanking']);
+    Route::get('swimsuit_ranking', [ScoreController::class, 'swimsuitRanking']);
+    Route::get('talent_ranking', [ScoreController::class, 'talentRanking']);
+    Route::get('gown_ranking', [ScoreController::class, 'gownRanking']);
+    Route::get('qa_ranking', [ScoreController::class, 'qaRanking']);
+    Route::get('beauty_ranking', [ScoreController::class, 'beautyRanking']);
+
+    Route::get('beauty_final', [FinalScoreController::class, 'beautyFinal']);
+    Route::get('qa_final', [FinalScoreController::class, 'qaFinal']);
 });
 
 
