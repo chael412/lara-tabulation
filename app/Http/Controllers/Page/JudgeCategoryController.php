@@ -149,14 +149,15 @@ class JudgeCategoryController extends Controller
             if (strpos($key, 'score-') === 0) {
                 // Extract the candidate number from "score-X"
                 $candidateNumber = str_replace('score-', '', $key);
-                // $average = round(($value / 100) * $data['percentage'], 2);
+                $average = round(($value / 100) * $data['percentage'], 2);
                 // Prepare an array for bulk insertion
                 $scores[] = [
                     'category_id' => $data['category_id'],
                     'user_id' => $data['user_id'],
                     'candidate_id' => (int) $candidateNumber + 1, // Adjusting candidate numbering
                     'round' => 1,
-                    'score' => $value,
+                    'score' => $average,
+                    'raw_score' => $value
                 ];
             }
         }
@@ -181,14 +182,15 @@ class JudgeCategoryController extends Controller
             if (strpos($key, 'score-') === 0) {
                 // Extract the candidate number from "score-X"
                 $candidateNumber = str_replace('score-', '', $key);
-                // $average = round(($value / 100) * $data['percentage'], 2);
+                $average = round(($value / 100) * $data['percentage'], 2);
                 // Prepare an array for bulk insertion
                 $scores[] = [
                     'category_id' => $data['category_id'],
                     'user_id' => $data['user_id'],
                     'candidate_id' => $candidates[(int) $candidateNumber], // Adjusting candidate numbering
                     'round' => 2,
-                    'score' => $value,
+                    'score' => $average,
+                    'raw_score' => $value
                 ];
             }
         }

@@ -61,6 +61,7 @@ class ScoreController extends Controller
                 'scores_by_category' => $scoresByCategory,
                 'overall_total_score' => $overallTotalScore,
                 'overall_avg_score'  => $overallAvgScore,
+                'top_five'            => $candidate->top_five,
             ];
         }
 

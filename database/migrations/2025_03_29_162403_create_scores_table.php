@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('candidate_id')->constrained('candidates')->onDelete('cascade');
             $table->enum('round', [1, 2]);
-            $table->integer('score');
+            $table->float('score');
+            $table->integer('raw_score');
             $table->timestamps();
         });
     }

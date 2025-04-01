@@ -9,7 +9,7 @@ const CategoryTable = ({
 }) => {
     const candidateScores = {};
     candidate_scores.forEach((item, index) => {
-        candidateScores[`score-${index}`] = item.score;
+        candidateScores[`score-${index}`] = item.raw_score;
     });
 
     return (

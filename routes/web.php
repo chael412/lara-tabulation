@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Page\AdminCategoryController;
 use App\Http\Controllers\Page\AdminUserController;
+use App\Http\Controllers\Page\CandidateController;
 use App\Http\Controllers\Page\JudgeCategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -38,6 +39,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
     Route::get('tallyprelim', [AdminCategoryController::class, 'getTallyPrelim'])->name('admin.tallyprelim');
     Route::get('tallyfinal', [AdminCategoryController::class, 'getTallyFinal'])->name('admin.tallyfinal');
+
+    Route::get('candidate', [CandidateController::class, 'getCandidates'])->name('admin.candidate.index');
+    Route::get('settopfive/{candidate}', [CandidateController::class, 'setTopFive'])->name('admin.settopfive');
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
