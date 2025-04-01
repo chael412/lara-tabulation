@@ -10,7 +10,7 @@ import { ClipLoader } from "react-spinners";
 
 const Gown = () => {
     const { data, error, isLoading } = useFetchData(
-        ["candidatec6"],
+        ["candidatec7"],
         "gown_ranking"
     );
 
