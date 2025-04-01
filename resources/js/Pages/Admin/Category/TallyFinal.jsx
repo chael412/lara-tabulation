@@ -109,7 +109,7 @@ const TallyFinal = () => {
                                                 key={i}
                                                 className="px-4 py-2 text-sm text-black  font-semibold border-b border-black"
                                             >
-                                                {candidate.avg_score}
+                                                {category.avg_score}
                                             </td>
                                         ))}
 
