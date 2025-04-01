@@ -17,8 +17,8 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 
-export default function Page({ scores = [] }) {
-    const contestants = [1, 2, 3, 4, 5];
+export default function Page({ scores = {}, candidates }) {
+    const contestants = candidates;
     const { register, handleSubmit } = useForm();
     const user = usePage().props.auth.user;
 
@@ -28,7 +28,7 @@ export default function Page({ scores = [] }) {
     const handleFormSubmit = (data) => {
         const formattedData = {
             ...data,
-            category_id: 8,
+            category_id: 11,
             user_id: user.id,
             percentage: 60,
         };

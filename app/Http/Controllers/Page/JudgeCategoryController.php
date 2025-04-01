@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -106,16 +107,38 @@ class JudgeCategoryController extends Controller
     }
     public function getBeautyFinal()
     {
+        $query = Candidate::query();
+        $candidateIds = $query->where('top_five', '=', 'yes')->pluck('candidate_number');
+        $candidates = $candidateIds->toArray();
 
-        return Inertia::render('Judge/Category/FinalBeauty');
+        $cat = Score::query();
+        $query = $cat->where('category_id', 10)
+                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
+                    ->get(); // Retrieve results
+
+        return Inertia::render('Judge/Category/FinalBeauty', [
+            'scores' => $query,
+            'candidates' => $candidates
+        ]);
     }
     public function getQAFinal()
     {
+        $query = Candidate::query();
+        $candidateIds = $query->where('top_five', '=', 'yes')->pluck('candidate_number');
+        $candidates = $candidateIds->toArray();
 
-        return Inertia::render('Judge/Category/FinalQandA');
+        $cat = Score::query();
+        $query = $cat->where('category_id', 11)
+                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
+                    ->get(); // Retrieve results
+
+        return Inertia::render('Judge/Category/FinalQandA', [
+            'scores' => $query,
+            'candidates' => $candidates
+        ]);
     }
 
-    public function storeProductionNumber(Request $request)
+    public function storeScores(Request $request)
     {
         $data = $request->all();
 
@@ -145,5 +168,34 @@ class JudgeCategoryController extends Controller
             'data' => $data,
             'scores' => $scores
         ], 200);
+    }
+
+    public function storeFinalScores(Request $request){
+        $data = $request->all();
+        $query = Candidate::query();
+        $candidateIds = $query->where('top_five', '=', 'yes')->pluck('candidate_number');
+        $candidates = $candidateIds->toArray();
+
+        $scores = [];
+        foreach ($data as $key => $value) {
+            if (strpos($key, 'score-') === 0) {
+                // Extract the candidate number from "score-X"
+                $candidateNumber = str_replace('score-', '', $key);
+                // $average = round(($value / 100) * $data['percentage'], 2);
+                // Prepare an array for bulk insertion
+                $scores[] = [
+                    'category_id' => $data['category_id'],
+                    'user_id' => $data['user_id'],
+                    'candidate_id' => $candidates[(int) $candidateNumber], // Adjusting candidate numbering
+                    'round' => 2,
+                    'score' => $value,
+                ];
+            }
+        }
+        Score::insert($scores);
+        return response()->json([
+            'message' => 'received',
+            'data' => $request->all() // or any specific part of the request
+        ]);
     }
 }
