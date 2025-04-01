@@ -114,7 +114,7 @@ const TallyFinal = () => {
                                         ))}
 
                                         <td className="px-4 py-2 text-sm text-black  font-semibold border-b border-black">
-                                            {candidate.overall_avg_score}
+                                            {candidate.final_score}
                                         </td>
                                         <td className="px-4 py-2 text-sm text-black  font-semibold border-b border-black">
                                             {index + 1}
