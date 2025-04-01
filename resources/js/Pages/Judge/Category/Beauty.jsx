@@ -34,7 +34,7 @@ export default function Page({ scores }) {
         };
 
         setFormData(formattedData); // Store form data
-        setIsDialogOpen(true); // Open confirmation dialog
+        setIsDialogOpen(true); // Open confirmation dialog hallow
     };
 
     const confirmSubmit = async () => {
@@ -42,7 +42,7 @@ export default function Page({ scores }) {
 
         try {
             const response = await axios.post(
-                "http://localhost:8000/api/storeproduction",
+                "https://piton.chaelx.online/api/storeproduction",
                 formData
             );
 
