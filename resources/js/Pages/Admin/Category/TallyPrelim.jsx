@@ -109,14 +109,12 @@ const TallyPrelim = () => {
                                                 key={i}
                                                 className="px-4 py-2 text-sm text-black  font-semibold border-b border-black"
                                             >
-                                                {category.total_score.toFixed(
-                                                    2
-                                                )}
+                                                {category.avg_score}
                                             </td>
                                         ))}
 
                                         <td className="px-4 py-2 text-sm text-black  font-semibold border-b border-black">
-                                            {candidate.overall_avg_score.toFixed(
+                                            {candidate.overall_total_score.toFixed(
                                                 2
                                             )}
                                             %

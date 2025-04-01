@@ -47,7 +47,7 @@ class ScoreController extends Controller
             }
 
             // Compute total score across all categories
-            $overallTotalScore = array_sum(array_column($scoresByCategory, 'total_score'));
+            $overallTotalScore = array_sum(array_column($scoresByCategory, 'avg_score'));
 
             // Compute overall average score across all categories (assumes 9 categories)
             $overallAvgScore = count($scoresByCategory) > 0
