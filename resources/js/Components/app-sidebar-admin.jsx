@@ -128,6 +128,12 @@ export function AppSidebar({ ...props }) {
                 icon: Award,
                 isActive: url === route("admin.qafinal", {}, false),
             },
+            {
+                title: "Tally Final",
+                url: route("admin.tallyfinal"),
+                icon: BsFillFlagFill,
+                isActive: url === route("admin.tallyfinal", {}, false),
+            },
         ],
     };
 
