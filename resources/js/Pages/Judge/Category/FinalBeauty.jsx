@@ -42,7 +42,7 @@ export default function Page({ scores = {}, candidates }) {
 
         try {
             const response = await axios.post(
-                "http://localhost:8000/api/storefinalscores",
+                "https://piton.chaelx.online/api/storefinalscores",
                 formData
             );
 
