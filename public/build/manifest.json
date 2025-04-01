@@ -1,288 +1,922 @@
 {
-  "_AuthenticatedLayout-Bcf_malp.js": {
-    "file": "assets/AuthenticatedLayout-Bcf_malp.js",
+  "_AuthenticatedLayout-BURDzPy-.js": {
+    "file": "assets/AuthenticatedLayout-BURDzPy-.js",
     "name": "AuthenticatedLayout",
     "imports": [
       "resources/js/app.jsx",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js",
-      "_index-C2mhgT6h.js"
+      "_breadcrumb-ChKeHn-6.js"
     ]
   },
-  "_GuestLayout-C_hy9Qau.js": {
-    "file": "assets/GuestLayout-C_hy9Qau.js",
+  "_AuthenticatedLayoutAdmin-DTRGw1GB.js": {
+    "file": "assets/AuthenticatedLayoutAdmin-DTRGw1GB.js",
+    "name": "AuthenticatedLayoutAdmin",
+    "imports": [
+      "resources/js/app.jsx",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js"
+    ]
+  },
+  "_ClipLoader-D5-J5Qow.js": {
+    "file": "assets/ClipLoader-D5-J5Qow.js",
+    "name": "ClipLoader",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_GuestLayout-LBflCs3S.js": {
+    "file": "assets/GuestLayout-LBflCs3S.js",
     "name": "GuestLayout",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_InputError-U8Oc9rTH.js": {
-    "file": "assets/InputError-U8Oc9rTH.js",
+  "_InputError-CMe__Q2B.js": {
+    "file": "assets/InputError-CMe__Q2B.js",
     "name": "InputError",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_InputLabel-CVbTZxYZ.js": {
-    "file": "assets/InputLabel-CVbTZxYZ.js",
+  "_InputLabel-ByPNQUx2.js": {
+    "file": "assets/InputLabel-ByPNQUx2.js",
     "name": "InputLabel",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_PrimaryButton-B8npx_Tw.js": {
-    "file": "assets/PrimaryButton-B8npx_Tw.js",
+  "_JudgeSignature-RV3DDXIg.js": {
+    "file": "assets/JudgeSignature-RV3DDXIg.js",
+    "name": "JudgeSignature",
+    "imports": [
+      "_useAppUrl-CkhyY3ND.js",
+      "resources/js/app.jsx"
+    ]
+  },
+  "_PrimaryButton-DcvI-_4M.js": {
+    "file": "assets/PrimaryButton-DcvI-_4M.js",
     "name": "PrimaryButton",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_TextInput-CqlH_FDK.js": {
-    "file": "assets/TextInput-CqlH_FDK.js",
+  "_TextInput-BE4f5yIp.js": {
+    "file": "assets/TextInput-BE4f5yIp.js",
     "name": "TextInput",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_button-BAcZ4DK0.js": {
-    "file": "assets/button-BAcZ4DK0.js",
+  "_breadcrumb-ChKeHn-6.js": {
+    "file": "assets/breadcrumb-ChKeHn-6.js",
+    "name": "breadcrumb",
+    "imports": [
+      "_index-CBX50caO.js",
+      "resources/js/app.jsx",
+      "_input-DMa8iIzV.js",
+      "_button-BstGHLmS.js"
+    ]
+  },
+  "_button-BstGHLmS.js": {
+    "file": "assets/button-BstGHLmS.js",
     "name": "button",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_card-DAY8ygjs.js": {
-    "file": "assets/card-DAY8ygjs.js",
+  "_card-GUWFzsCw.js": {
+    "file": "assets/card-GUWFzsCw.js",
     "name": "card",
     "imports": [
       "resources/js/app.jsx",
-      "_button-BAcZ4DK0.js"
+      "_button-BstGHLmS.js"
     ]
   },
-  "_index-C2mhgT6h.js": {
-    "file": "assets/index-C2mhgT6h.js",
+  "_index-CBX50caO.js": {
+    "file": "assets/index-CBX50caO.js",
     "name": "index",
     "imports": [
       "resources/js/app.jsx",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js"
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
     ]
   },
-  "_input-KLSQSyDB.js": {
-    "file": "assets/input-KLSQSyDB.js",
+  "_input-DMa8iIzV.js": {
+    "file": "assets/input-DMa8iIzV.js",
     "name": "input",
     "imports": [
       "resources/js/app.jsx",
-      "_button-BAcZ4DK0.js"
+      "_button-BstGHLmS.js"
     ]
   },
-  "_label-CeEZKeIc.js": {
-    "file": "assets/label-CeEZKeIc.js",
+  "_label-DSE2iCW6.js": {
+    "file": "assets/label-DSE2iCW6.js",
     "name": "label",
     "imports": [
       "resources/js/app.jsx",
-      "_input-KLSQSyDB.js",
-      "_button-BAcZ4DK0.js"
+      "_input-DMa8iIzV.js",
+      "_button-BstGHLmS.js"
     ]
   },
-  "_transition-CeQC3FLD.js": {
-    "file": "assets/transition-CeQC3FLD.js",
+  "_sonner-7iZyPlnH.js": {
+    "file": "assets/sonner-7iZyPlnH.js",
+    "name": "sonner",
+    "imports": [
+      "resources/js/app.jsx",
+      "_input-DMa8iIzV.js",
+      "_button-BstGHLmS.js",
+      "_index-CBX50caO.js"
+    ]
+  },
+  "_table-DvztHSeZ.js": {
+    "file": "assets/table-DvztHSeZ.js",
+    "name": "table",
+    "imports": [
+      "resources/js/app.jsx",
+      "_button-BstGHLmS.js"
+    ]
+  },
+  "_transition-C2uT7VSn.js": {
+    "file": "assets/transition-C2uT7VSn.js",
     "name": "transition",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
+  "_useAppUrl-CkhyY3ND.js": {
+    "file": "assets/useAppUrl-CkhyY3ND.js",
+    "name": "useAppUrl",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js"
+    ]
+  },
+  "node_modules/@fontsource/dancing-script/files/dancing-script-latin-400-normal.woff": {
+    "file": "assets/dancing-script-latin-400-normal-CBaqTbSQ.woff",
+    "src": "node_modules/@fontsource/dancing-script/files/dancing-script-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/dancing-script/files/dancing-script-latin-400-normal.woff2": {
+    "file": "assets/dancing-script-latin-400-normal-BGOkwg1k.woff2",
+    "src": "node_modules/@fontsource/dancing-script/files/dancing-script-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/dancing-script/files/dancing-script-latin-ext-400-normal.woff": {
+    "file": "assets/dancing-script-latin-ext-400-normal-C3ZxgGIm.woff",
+    "src": "node_modules/@fontsource/dancing-script/files/dancing-script-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/dancing-script/files/dancing-script-latin-ext-400-normal.woff2": {
+    "file": "assets/dancing-script-latin-ext-400-normal-CBcYVTwL.woff2",
+    "src": "node_modules/@fontsource/dancing-script/files/dancing-script-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/dancing-script/files/dancing-script-vietnamese-400-normal.woff": {
+    "file": "assets/dancing-script-vietnamese-400-normal-CdHIbuER.woff",
+    "src": "node_modules/@fontsource/dancing-script/files/dancing-script-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/dancing-script/files/dancing-script-vietnamese-400-normal.woff2": {
+    "file": "assets/dancing-script-vietnamese-400-normal-CVC4eMIM.woff2",
+    "src": "node_modules/@fontsource/dancing-script/files/dancing-script-vietnamese-400-normal.woff2"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-400-normal.woff": {
+    "file": "assets/great-vibes-cyrillic-400-normal-DtFXCWjq.woff",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-400-normal.woff"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-400-normal.woff2": {
+    "file": "assets/great-vibes-cyrillic-400-normal-C-wcqNJs.woff2",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-ext-400-normal.woff": {
+    "file": "assets/great-vibes-cyrillic-ext-400-normal-CzcHves0.woff",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-ext-400-normal.woff2": {
+    "file": "assets/great-vibes-cyrillic-ext-400-normal-CKQhgFwn.woff2",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-greek-ext-400-normal.woff": {
+    "file": "assets/great-vibes-greek-ext-400-normal-I8uMZwKr.woff",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-greek-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-greek-ext-400-normal.woff2": {
+    "file": "assets/great-vibes-greek-ext-400-normal-Caxd-0sC.woff2",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-latin-400-normal.woff": {
+    "file": "assets/great-vibes-latin-400-normal-CLO24iQJ.woff",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-latin-400-normal.woff2": {
+    "file": "assets/great-vibes-latin-400-normal-CBcwG6wP.woff2",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-latin-ext-400-normal.woff": {
+    "file": "assets/great-vibes-latin-ext-400-normal-DCXVjJx8.woff",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-latin-ext-400-normal.woff2": {
+    "file": "assets/great-vibes-latin-ext-400-normal-DOkzbsi7.woff2",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-vietnamese-400-normal.woff": {
+    "file": "assets/great-vibes-vietnamese-400-normal-Cxbm9Uac.woff",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/great-vibes/files/great-vibes-vietnamese-400-normal.woff2": {
+    "file": "assets/great-vibes-vietnamese-400-normal-a2O3jU53.woff2",
+    "src": "node_modules/@fontsource/great-vibes/files/great-vibes-vietnamese-400-normal.woff2"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-cyrillic-400-normal.woff": {
+    "file": "assets/lobster-cyrillic-400-normal-CUFgGW1y.woff",
+    "src": "node_modules/@fontsource/lobster/files/lobster-cyrillic-400-normal.woff"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-cyrillic-400-normal.woff2": {
+    "file": "assets/lobster-cyrillic-400-normal-C5aZhDRY.woff2",
+    "src": "node_modules/@fontsource/lobster/files/lobster-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-cyrillic-ext-400-normal.woff": {
+    "file": "assets/lobster-cyrillic-ext-400-normal-B-Rp4OXu.woff",
+    "src": "node_modules/@fontsource/lobster/files/lobster-cyrillic-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-cyrillic-ext-400-normal.woff2": {
+    "file": "assets/lobster-cyrillic-ext-400-normal-C2niP8WY.woff2",
+    "src": "node_modules/@fontsource/lobster/files/lobster-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-latin-400-normal.woff": {
+    "file": "assets/lobster-latin-400-normal-BRKvPk3X.woff",
+    "src": "node_modules/@fontsource/lobster/files/lobster-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-latin-400-normal.woff2": {
+    "file": "assets/lobster-latin-400-normal-BJtHEyLy.woff2",
+    "src": "node_modules/@fontsource/lobster/files/lobster-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-latin-ext-400-normal.woff": {
+    "file": "assets/lobster-latin-ext-400-normal-DV2j-Y34.woff",
+    "src": "node_modules/@fontsource/lobster/files/lobster-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-latin-ext-400-normal.woff2": {
+    "file": "assets/lobster-latin-ext-400-normal-FkHn3947.woff2",
+    "src": "node_modules/@fontsource/lobster/files/lobster-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-vietnamese-400-normal.woff": {
+    "file": "assets/lobster-vietnamese-400-normal-Dl4SdoJQ.woff",
+    "src": "node_modules/@fontsource/lobster/files/lobster-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/lobster/files/lobster-vietnamese-400-normal.woff2": {
+    "file": "assets/lobster-vietnamese-400-normal-CvWS79a1.woff2",
+    "src": "node_modules/@fontsource/lobster/files/lobster-vietnamese-400-normal.woff2"
+  },
+  "resources/js/Pages/Admin/Candidate/Index.jsx": {
+    "file": "assets/Index-P2VzbRvC.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/Candidate/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/Beauty.jsx": {
+    "file": "assets/Beauty-D_RoJQrN.js",
+    "name": "Beauty",
+    "src": "resources/js/Pages/Admin/Category/Beauty.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/CasualWear.jsx": {
+    "file": "assets/CasualWear-CRWT-M7h.js",
+    "name": "CasualWear",
+    "src": "resources/js/Pages/Admin/Category/CasualWear.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/FestivalAttire.jsx": {
+    "file": "assets/FestivalAttire-BsjezK6S.js",
+    "name": "FestivalAttire",
+    "src": "resources/js/Pages/Admin/Category/FestivalAttire.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/FinalBeauty.jsx": {
+    "file": "assets/FinalBeauty-BEGtQUWo.js",
+    "name": "FinalBeauty",
+    "src": "resources/js/Pages/Admin/Category/FinalBeauty.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/FinalQA.jsx": {
+    "file": "assets/FinalQA-BlkKgd1J.js",
+    "name": "FinalQA",
+    "src": "resources/js/Pages/Admin/Category/FinalQA.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/Gown.jsx": {
+    "file": "assets/Gown-hbZp1Dm6.js",
+    "name": "Gown",
+    "src": "resources/js/Pages/Admin/Category/Gown.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/JeanWear.jsx": {
+    "file": "assets/JeanWear-qMGKoJIv.js",
+    "name": "JeanWear",
+    "src": "resources/js/Pages/Admin/Category/JeanWear.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/ProductionNumber.jsx": {
+    "file": "assets/ProductionNumber-CQ0GOKeI.js",
+    "name": "ProductionNumber",
+    "src": "resources/js/Pages/Admin/Category/ProductionNumber.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/QA.jsx": {
+    "file": "assets/QA-B5GbJz__.js",
+    "name": "QA",
+    "src": "resources/js/Pages/Admin/Category/QA.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/Swimsuit.jsx": {
+    "file": "assets/Swimsuit-C0RmBDtw.js",
+    "name": "Swimsuit",
+    "src": "resources/js/Pages/Admin/Category/Swimsuit.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/Talent.jsx": {
+    "file": "assets/Talent-CTG-JwE2.js",
+    "name": "Talent",
+    "src": "resources/js/Pages/Admin/Category/Talent.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_ClipLoader-D5-J5Qow.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/TallyFinal.jsx": {
+    "file": "assets/TallyFinal-BGji3hcp.js",
+    "name": "TallyFinal",
+    "src": "resources/js/Pages/Admin/Category/TallyFinal.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Category/TallyPrelim.jsx": {
+    "file": "assets/TallyPrelim-BU2zTZBW.js",
+    "name": "TallyPrelim",
+    "src": "resources/js/Pages/Admin/Category/TallyPrelim.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_useAppUrl-CkhyY3ND.js",
+      "_JudgeSignature-RV3DDXIg.js",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_button-BstGHLmS.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Dashboard.jsx": {
+    "file": "assets/Dashboard-vFBj-HRe.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Admin/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Admin/User/Index.jsx": {
+    "file": "assets/Index-DIFfIuM6.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/User/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_useAppUrl-CkhyY3ND.js",
+      "_button-BstGHLmS.js",
+      "_index-CBX50caO.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_table-DvztHSeZ.js",
+      "_input-DMa8iIzV.js",
+      "_ClipLoader-D5-J5Qow.js"
+    ]
+  },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
-    "file": "assets/ConfirmPassword-xx09B4YZ.js",
+    "file": "assets/ConfirmPassword-BVdojMSZ.js",
     "name": "ConfirmPassword",
     "src": "resources/js/Pages/Auth/ConfirmPassword.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_InputLabel-CVbTZxYZ.js",
-      "_PrimaryButton-B8npx_Tw.js",
-      "_TextInput-CqlH_FDK.js",
-      "_GuestLayout-C_hy9Qau.js"
+      "_InputError-CMe__Q2B.js",
+      "_InputLabel-ByPNQUx2.js",
+      "_PrimaryButton-DcvI-_4M.js",
+      "_TextInput-BE4f5yIp.js",
+      "_GuestLayout-LBflCs3S.js"
     ]
   },
   "resources/js/Pages/Auth/ForgotPassword.jsx": {
-    "file": "assets/ForgotPassword-Bk3T1Ea_.js",
+    "file": "assets/ForgotPassword-DzCyjJIL.js",
     "name": "ForgotPassword",
     "src": "resources/js/Pages/Auth/ForgotPassword.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_PrimaryButton-B8npx_Tw.js",
-      "_TextInput-CqlH_FDK.js",
-      "_GuestLayout-C_hy9Qau.js"
+      "_InputError-CMe__Q2B.js",
+      "_PrimaryButton-DcvI-_4M.js",
+      "_TextInput-BE4f5yIp.js",
+      "_GuestLayout-LBflCs3S.js"
     ]
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-idwDRW6N.js",
+    "file": "assets/Login-CUksggvZ.js",
     "name": "Login",
     "src": "resources/js/Pages/Auth/Login.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_TextInput-CqlH_FDK.js",
-      "_GuestLayout-C_hy9Qau.js",
-      "_card-DAY8ygjs.js",
-      "_label-CeEZKeIc.js",
-      "_input-KLSQSyDB.js",
-      "_button-BAcZ4DK0.js"
+      "_InputError-CMe__Q2B.js",
+      "_TextInput-BE4f5yIp.js",
+      "_GuestLayout-LBflCs3S.js",
+      "_card-GUWFzsCw.js",
+      "_label-DSE2iCW6.js",
+      "_input-DMa8iIzV.js",
+      "_button-BstGHLmS.js"
     ]
   },
   "resources/js/Pages/Auth/Register.jsx": {
-    "file": "assets/Register-DA7ITmWK.js",
+    "file": "assets/Register-Dntfo-kv.js",
     "name": "Register",
     "src": "resources/js/Pages/Auth/Register.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_TextInput-CqlH_FDK.js",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js",
-      "_label-CeEZKeIc.js",
-      "_GuestLayout-C_hy9Qau.js"
+      "_InputError-CMe__Q2B.js",
+      "_TextInput-BE4f5yIp.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js",
+      "_label-DSE2iCW6.js",
+      "_GuestLayout-LBflCs3S.js"
     ]
   },
   "resources/js/Pages/Auth/ResetPassword.jsx": {
-    "file": "assets/ResetPassword-OLDYflQr.js",
+    "file": "assets/ResetPassword-BV0SUUpn.js",
     "name": "ResetPassword",
     "src": "resources/js/Pages/Auth/ResetPassword.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_InputLabel-CVbTZxYZ.js",
-      "_PrimaryButton-B8npx_Tw.js",
-      "_TextInput-CqlH_FDK.js",
-      "_GuestLayout-C_hy9Qau.js"
+      "_InputError-CMe__Q2B.js",
+      "_InputLabel-ByPNQUx2.js",
+      "_PrimaryButton-DcvI-_4M.js",
+      "_TextInput-BE4f5yIp.js",
+      "_GuestLayout-LBflCs3S.js"
     ]
   },
   "resources/js/Pages/Auth/VerifyEmail.jsx": {
-    "file": "assets/VerifyEmail-iHCVEgyQ.js",
+    "file": "assets/VerifyEmail-CWfOBZ39.js",
     "name": "VerifyEmail",
     "src": "resources/js/Pages/Auth/VerifyEmail.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_PrimaryButton-B8npx_Tw.js",
-      "_GuestLayout-C_hy9Qau.js"
+      "_PrimaryButton-DcvI-_4M.js",
+      "_GuestLayout-LBflCs3S.js"
     ]
   },
   "resources/js/Pages/Dashboard.jsx": {
-    "file": "assets/Dashboard-u0mdBu0C.js",
+    "file": "assets/Dashboard-Dbp_X2bt.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Dashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AuthenticatedLayout-Bcf_malp.js",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js",
-      "_index-C2mhgT6h.js"
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_table-DvztHSeZ.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/Beauty.jsx": {
+    "file": "assets/Beauty-C3VZSfOb.js",
+    "name": "Beauty",
+    "src": "resources/js/Pages/Judge/Category/Beauty.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/CasualWear.jsx": {
+    "file": "assets/CasualWear-CFk08G21.js",
+    "name": "CasualWear",
+    "src": "resources/js/Pages/Judge/Category/CasualWear.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/FestivalAttire.jsx": {
+    "file": "assets/FestivalAttire-CIrET3KL.js",
+    "name": "FestivalAttire",
+    "src": "resources/js/Pages/Judge/Category/FestivalAttire.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/FinalBeauty.jsx": {
+    "file": "assets/FinalBeauty-B_I58mFZ.js",
+    "name": "FinalBeauty",
+    "src": "resources/js/Pages/Judge/Category/FinalBeauty.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/FinalQandA.jsx": {
+    "file": "assets/FinalQandA-DhiMZRDP.js",
+    "name": "FinalQandA",
+    "src": "resources/js/Pages/Judge/Category/FinalQandA.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/Gown.jsx": {
+    "file": "assets/Gown-Bg5qoPbT.js",
+    "name": "Gown",
+    "src": "resources/js/Pages/Judge/Category/Gown.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/JeansWear.jsx": {
+    "file": "assets/JeansWear-CLF2Xg5H.js",
+    "name": "JeansWear",
+    "src": "resources/js/Pages/Judge/Category/JeansWear.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/ProductionNumber.jsx": {
+    "file": "assets/ProductionNumber-B_4ifFpS.js",
+    "name": "ProductionNumber",
+    "src": "resources/js/Pages/Judge/Category/ProductionNumber.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/QandA.jsx": {
+    "file": "assets/QandA-DkmZNRUx.js",
+    "name": "QandA",
+    "src": "resources/js/Pages/Judge/Category/QandA.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/Swimsuit.jsx": {
+    "file": "assets/Swimsuit-BjWx-Jyo.js",
+    "name": "Swimsuit",
+    "src": "resources/js/Pages/Judge/Category/Swimsuit.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Category/Talent.jsx": {
+    "file": "assets/Talent-BbZRW3DZ.js",
+    "name": "Talent",
+    "src": "resources/js/Pages/Judge/Category/Talent.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayout-BURDzPy-.js",
+      "_sonner-7iZyPlnH.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
+    ]
+  },
+  "resources/js/Pages/Judge/Dashboard.jsx": {
+    "file": "assets/Dashboard-D0uj0662.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Judge/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthenticatedLayoutAdmin-DTRGw1GB.js",
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js"
     ]
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-C3J_8EcO.js",
+    "file": "assets/Edit-oEVHciPY.js",
     "name": "Edit",
     "src": "resources/js/Pages/Profile/Edit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AuthenticatedLayout-Bcf_malp.js",
+      "_AuthenticatedLayout-BURDzPy-.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js",
-      "_index-C2mhgT6h.js",
-      "_InputError-U8Oc9rTH.js",
-      "_TextInput-CqlH_FDK.js",
-      "_label-CeEZKeIc.js",
-      "_transition-CeQC3FLD.js"
+      "_breadcrumb-ChKeHn-6.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js",
+      "_InputError-CMe__Q2B.js",
+      "_TextInput-BE4f5yIp.js",
+      "_label-DSE2iCW6.js",
+      "_transition-C2uT7VSn.js"
     ]
   },
   "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx": {
-    "file": "assets/DeleteUserForm-Bw2J-S6v.js",
+    "file": "assets/DeleteUserForm-B66CLOUN.js",
     "name": "DeleteUserForm",
     "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_index-C2mhgT6h.js",
-      "_button-BAcZ4DK0.js",
-      "_TextInput-CqlH_FDK.js",
-      "_input-KLSQSyDB.js",
-      "_label-CeEZKeIc.js"
+      "_InputError-CMe__Q2B.js",
+      "_index-CBX50caO.js",
+      "_button-BstGHLmS.js",
+      "_TextInput-BE4f5yIp.js",
+      "_input-DMa8iIzV.js",
+      "_label-DSE2iCW6.js"
     ]
   },
   "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx": {
-    "file": "assets/UpdatePasswordForm-D_574uTx.js",
+    "file": "assets/UpdatePasswordForm-Br2Tyofz.js",
     "name": "UpdatePasswordForm",
     "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_TextInput-CqlH_FDK.js",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js",
-      "_label-CeEZKeIc.js",
-      "_transition-CeQC3FLD.js"
+      "_InputError-CMe__Q2B.js",
+      "_TextInput-BE4f5yIp.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js",
+      "_label-DSE2iCW6.js",
+      "_transition-C2uT7VSn.js"
     ]
   },
   "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx": {
-    "file": "assets/UpdateProfileInformationForm-vy8PZf2m.js",
+    "file": "assets/UpdateProfileInformationForm-_-DYINl8.js",
     "name": "UpdateProfileInformationForm",
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_InputError-U8Oc9rTH.js",
-      "_TextInput-CqlH_FDK.js",
-      "_button-BAcZ4DK0.js",
-      "_input-KLSQSyDB.js",
-      "_label-CeEZKeIc.js",
-      "_transition-CeQC3FLD.js"
+      "_InputError-CMe__Q2B.js",
+      "_TextInput-BE4f5yIp.js",
+      "_button-BstGHLmS.js",
+      "_input-DMa8iIzV.js",
+      "_label-DSE2iCW6.js",
+      "_transition-C2uT7VSn.js"
     ]
   },
   "resources/js/Pages/Welcome.jsx": {
-    "file": "assets/Welcome-DRLSog3_.js",
+    "file": "assets/Welcome-kpljnPoi.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_button-BAcZ4DK0.js"
+      "_button-BstGHLmS.js"
     ]
   },
   "resources/js/Pages/login.jsx": {
-    "file": "assets/login-Cwbxhtkd.js",
+    "file": "assets/login-D6APpeqw.js",
     "name": "login",
     "src": "resources/js/Pages/login.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_button-BAcZ4DK0.js",
-      "_card-DAY8ygjs.js",
-      "_input-KLSQSyDB.js",
-      "_label-CeEZKeIc.js",
-      "_InputError-U8Oc9rTH.js"
+      "_button-BstGHLmS.js",
+      "_card-GUWFzsCw.js",
+      "_input-DMa8iIzV.js",
+      "_label-DSE2iCW6.js",
+      "_InputError-CMe__Q2B.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-Dj1WCjEV.js",
+    "file": "assets/app-DMIFOAuK.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "dynamicImports": [
+      "resources/js/Pages/Admin/Candidate/Index.jsx",
+      "resources/js/Pages/Admin/Category/Beauty.jsx",
+      "resources/js/Pages/Admin/Category/CasualWear.jsx",
+      "resources/js/Pages/Admin/Category/FestivalAttire.jsx",
+      "resources/js/Pages/Admin/Category/FinalBeauty.jsx",
+      "resources/js/Pages/Admin/Category/FinalQA.jsx",
+      "resources/js/Pages/Admin/Category/Gown.jsx",
+      "resources/js/Pages/Admin/Category/JeanWear.jsx",
+      "resources/js/Pages/Admin/Category/ProductionNumber.jsx",
+      "resources/js/Pages/Admin/Category/QA.jsx",
+      "resources/js/Pages/Admin/Category/Swimsuit.jsx",
+      "resources/js/Pages/Admin/Category/Talent.jsx",
+      "resources/js/Pages/Admin/Category/TallyFinal.jsx",
+      "resources/js/Pages/Admin/Category/TallyPrelim.jsx",
+      "resources/js/Pages/Admin/Dashboard.jsx",
+      "resources/js/Pages/Admin/User/Index.jsx",
       "resources/js/Pages/Auth/ConfirmPassword.jsx",
       "resources/js/Pages/Auth/ForgotPassword.jsx",
       "resources/js/Pages/Auth/Login.jsx",
@@ -290,6 +924,18 @@
       "resources/js/Pages/Auth/ResetPassword.jsx",
       "resources/js/Pages/Auth/VerifyEmail.jsx",
       "resources/js/Pages/Dashboard.jsx",
+      "resources/js/Pages/Judge/Category/Beauty.jsx",
+      "resources/js/Pages/Judge/Category/CasualWear.jsx",
+      "resources/js/Pages/Judge/Category/FestivalAttire.jsx",
+      "resources/js/Pages/Judge/Category/FinalBeauty.jsx",
+      "resources/js/Pages/Judge/Category/FinalQandA.jsx",
+      "resources/js/Pages/Judge/Category/Gown.jsx",
+      "resources/js/Pages/Judge/Category/JeansWear.jsx",
+      "resources/js/Pages/Judge/Category/ProductionNumber.jsx",
+      "resources/js/Pages/Judge/Category/QandA.jsx",
+      "resources/js/Pages/Judge/Category/Swimsuit.jsx",
+      "resources/js/Pages/Judge/Category/Talent.jsx",
+      "resources/js/Pages/Judge/Dashboard.jsx",
       "resources/js/Pages/Profile/Edit.jsx",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
@@ -298,7 +944,37 @@
       "resources/js/Pages/login.jsx"
     ],
     "css": [
-      "assets/app-DlHaE-HE.css"
+      "assets/app-DsiAjJd4.css"
+    ],
+    "assets": [
+      "assets/dancing-script-vietnamese-400-normal-CVC4eMIM.woff2",
+      "assets/dancing-script-vietnamese-400-normal-CdHIbuER.woff",
+      "assets/dancing-script-latin-ext-400-normal-CBcYVTwL.woff2",
+      "assets/dancing-script-latin-ext-400-normal-C3ZxgGIm.woff",
+      "assets/dancing-script-latin-400-normal-BGOkwg1k.woff2",
+      "assets/dancing-script-latin-400-normal-CBaqTbSQ.woff",
+      "assets/great-vibes-cyrillic-ext-400-normal-CKQhgFwn.woff2",
+      "assets/great-vibes-cyrillic-ext-400-normal-CzcHves0.woff",
+      "assets/great-vibes-cyrillic-400-normal-C-wcqNJs.woff2",
+      "assets/great-vibes-cyrillic-400-normal-DtFXCWjq.woff",
+      "assets/great-vibes-greek-ext-400-normal-Caxd-0sC.woff2",
+      "assets/great-vibes-greek-ext-400-normal-I8uMZwKr.woff",
+      "assets/great-vibes-vietnamese-400-normal-a2O3jU53.woff2",
+      "assets/great-vibes-vietnamese-400-normal-Cxbm9Uac.woff",
+      "assets/great-vibes-latin-ext-400-normal-DOkzbsi7.woff2",
+      "assets/great-vibes-latin-ext-400-normal-DCXVjJx8.woff",
+      "assets/great-vibes-latin-400-normal-CBcwG6wP.woff2",
+      "assets/great-vibes-latin-400-normal-CLO24iQJ.woff",
+      "assets/lobster-cyrillic-ext-400-normal-C2niP8WY.woff2",
+      "assets/lobster-cyrillic-ext-400-normal-B-Rp4OXu.woff",
+      "assets/lobster-cyrillic-400-normal-C5aZhDRY.woff2",
+      "assets/lobster-cyrillic-400-normal-CUFgGW1y.woff",
+      "assets/lobster-vietnamese-400-normal-CvWS79a1.woff2",
+      "assets/lobster-vietnamese-400-normal-Dl4SdoJQ.woff",
+      "assets/lobster-latin-ext-400-normal-FkHn3947.woff2",
+      "assets/lobster-latin-ext-400-normal-DV2j-Y34.woff",
+      "assets/lobster-latin-400-normal-BJtHEyLy.woff2",
+      "assets/lobster-latin-400-normal-BRKvPk3X.woff"
     ]
   }
 }
