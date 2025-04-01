@@ -47,7 +47,7 @@ class FinalScoreController extends Controller
             }
 
             // Compute total score across categories 10 and 11
-            $overallTotalScore = array_sum(array_column($scoresByCategory, 'avg_score'));
+            $overallTotalScore = array_sum(array_column($scoresByCategory, 'total_score'));
 
             // Compute overall average score across categories 10 and 11
             $overallAvgScore = count($scoresByCategory) > 0
