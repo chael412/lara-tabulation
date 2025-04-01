@@ -131,12 +131,15 @@ const Talent = () => {
                                                     key={judge.id}
                                                     className="px-4 py-2 text-black text-custom-sm font-medium"
                                                 >
-                                                    {score ?? "-"}
+                                                    {score !== null &&
+                                                    score !== undefined
+                                                        ? score.toFixed(2)
+                                                        : "-"}
                                                 </td>
                                             );
                                         })}
                                         <td className="px-4 py-2 text-black text-custom-sm font-medium">
-                                            {candidate.total_score}
+                                            {candidate.total_score.toFixed(2)}
                                         </td>
                                         <td className="px-4 py-2 text-black text-custom-sm font-medium">
                                             {Number(

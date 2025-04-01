@@ -46,7 +46,7 @@ const Index = ({ success }) => {
                 {/* <pre>{JSON.stringify(data, undefined, 4)}</pre> */}
                 <div ref={contentRef} className="py-2 px-4 bg-white ">
                     <div>
-                        <table className="border-collapse border border-black bg-[#ffff99] w-full text-center">
+                        <table className="border-collapse border border-black bg-[#ffff99] w-full text-center mb-4">
                             <thead>
                                 <tr>
                                     <th
@@ -128,26 +128,35 @@ const Index = ({ success }) => {
                                         </td>
                                         <th className="px-4 py-2 text-sm text-black font-bold border-b border-black">
                                             {index < 5 && (
-                                                <Link
-                                                    href={route(
-                                                        "admin.settopfive",
-                                                        candidate.candidate_id
-                                                    )}
-                                                >
-                                                    <Button className="bg-green-600 hover:bg-green-800">
-                                                        Set as Top 5
-                                                    </Button>
-                                                </Link>
+                                                <>
+                                                    <Link
+                                                        href={route(
+                                                            "admin.settopfive",
+                                                            candidate.candidate_id
+                                                        )}
+                                                    >
+                                                        <Button className="bg-green-600 hover:bg-green-800">
+                                                            Set as Top 5
+                                                        </Button>
+                                                    </Link>
+                                                    <Link
+                                                        href={route(
+                                                            "admin.settono",
+                                                            candidate.candidate_id
+                                                        )}
+                                                        className="m-3"
+                                                    >
+                                                        <Button className="bg-red-600 hover:bg-red-800">
+                                                            Set to No
+                                                        </Button>
+                                                    </Link>
+                                                </>
                                             )}
                                         </th>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
-                    </div>
-
-                    <div className="mt-16">
-                        <JudgeSignature />
                     </div>
                 </div>
             </div>

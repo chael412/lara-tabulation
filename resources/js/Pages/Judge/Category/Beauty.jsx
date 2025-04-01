@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
+import useAppUrl from "@/hooks/useAppUrl";
 
 export default function Page({ scores }) {
     const contestants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -24,7 +25,7 @@ export default function Page({ scores }) {
 
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [formData, setFormData] = useState(null);
-
+    const appURL = useAppUrl();
     const handleFormSubmit = (data) => {
         const formattedData = {
             ...data,
@@ -42,7 +43,7 @@ export default function Page({ scores }) {
 
         try {
             const response = await axios.post(
-                "https://piton.chaelx.online/api/storeproduction",
+                `${appURL}/api/storeproduction`,
                 formData
             );
 

@@ -109,12 +109,12 @@ const TallyFinal = () => {
                                                 key={i}
                                                 className="px-4 py-2 text-sm text-black  font-semibold border-b border-black"
                                             >
-                                                {category.total_score}
+                                                {candidate.avg_score}%
                                             </td>
                                         ))}
 
                                         <td className="px-4 py-2 text-sm text-black  font-semibold border-b border-black">
-                                            {candidate.final_score}
+                                            {candidate.final_score.toFixed(2)}%
                                         </td>
                                         <td className="px-4 py-2 text-sm text-black  font-semibold border-b border-black">
                                             {index + 1}

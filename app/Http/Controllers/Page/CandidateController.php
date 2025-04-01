@@ -28,4 +28,16 @@ class CandidateController extends Controller
 
         return to_route('admin.candidate.index')->with('success', "200");
     }
+    public function setToNo(Candidate $candidate)
+    {
+        try {
+            $candidate->update([
+                'top_five' => 'no',
+            ]);
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+
+        return to_route('admin.candidate.index')->with('success', "200");
+    }
 }
