@@ -12,13 +12,6 @@ const Dashboard = () => {
             }
         >
             <Head title="Dashboard" />
-            <div className="flex justify-center items-center">
-                <h2 className="h-screen flex flex-col text-center text-[82px] font-light font-lobster mt-10">
-                    <span>Philippine Information</span>
-                    <span>Technology of the North</span>
-                    <span>PiTON </span>
-                </h2>
-            </div>
         </AuthenticatedLayout>
     );
 };

@@ -32,11 +32,11 @@ const FinalBeauty = () => {
         <AuthenticatedLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Beauty
+                    Top 5 Q&A
                 </h2>
             }
         >
-            <Head title="Beauty" />
+            <Head title="Top 5 Q&A" />
             <div>
                 <div className="flex justify-end m-2">
                     <Button onClick={() => reactToPrintFn()}>
@@ -71,7 +71,7 @@ const FinalBeauty = () => {
                                         colSpan={12}
                                         className="px-4 pt-4 text-center text-black text-xl font-light bg-white border-b border-black"
                                     >
-                                        Beauty 5%
+                                        Top 5 Q&A 60%
                                     </th>
                                 </tr>
                             </thead>

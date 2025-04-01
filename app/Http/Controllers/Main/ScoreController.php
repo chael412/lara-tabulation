@@ -4,12 +4,155 @@ namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
 use App\Models\Candidate;
+use App\Models\Category;
 use App\Models\Score;
 use App\Http\Requests\StoreScoreRequest;
 use App\Http\Requests\UpdateScoreRequest;
 
 class ScoreController extends Controller
 {
+    public function tallyPrelim()
+    {
+        // Fetch only categories 1 to 9 and ensure they have names
+        $categories = Category::whereIn('id', range(1, 9))
+            ->get()
+            ->mapWithKeys(function ($category) {
+                return [$category->id => $category->category_name];
+            });
+
+        // Get all candidates with their scores
+        $candidates = Candidate::with(['scores'])->get();
+
+        $candidateScores = [];
+
+        foreach ($candidates as $candidate) {
+            // Initialize scores_by_category with all categories
+            $scoresByCategory = [];
+            foreach ($categories as $categoryId => $categoryName) {
+                $scoresByCategory[$categoryId] = [
+                    'category_name' => $categoryName,
+                    'total_score'  => 0,
+                    'avg_score'    => 0,
+                ];
+            }
+
+            // Populate actual scores grouped by category (only categories 1-9 are considered)
+            foreach ($candidate->scores->groupBy('category_id') as $categoryId => $scores) {
+                if (isset($scoresByCategory[$categoryId])) {
+                    $total = $scores->sum('score');
+                    $avg = $scores->count() > 0 ? round($scores->avg('score'), 2) : 0;
+                    $scoresByCategory[$categoryId]['total_score'] = $total;
+                    $scoresByCategory[$categoryId]['avg_score']   = $avg;
+                }
+            }
+
+            // Compute total score across all categories
+            $overallTotalScore = array_sum(array_column($scoresByCategory, 'total_score'));
+
+            // Compute overall average score across all categories (assumes 9 categories)
+            $overallAvgScore = count($scoresByCategory) > 0
+                ? round($overallTotalScore / count($scoresByCategory), 2)
+                : 0;
+
+            $candidateScores[] = [
+                'candidate_id'       => $candidate->id,
+                'candidate_number'   => $candidate->candidate_number,
+                'candidate_name'     => $candidate->candidate_name,
+                'scores_by_category' => $scoresByCategory,
+                'overall_total_score' => $overallTotalScore,
+                'overall_avg_score'  => $overallAvgScore,
+            ];
+        }
+
+        // Rank candidates based on the overall total score (highest first)
+        usort($candidateScores, fn($a, $b) => $b['overall_total_score'] <=> $a['overall_total_score']);
+
+        // Assign ranking (handling ties)
+        $rank = 1;
+        $previousScore = null;
+        foreach ($candidateScores as $index => &$candidate) {
+            if ($previousScore !== null && $candidate['overall_total_score'] < $previousScore) {
+                $rank = $index + 1;
+            }
+            $candidate['rank'] = $rank;
+            $previousScore = $candidate['overall_total_score'];
+        }
+
+        return response()->json([
+            'candidates' => $candidateScores
+        ]);
+    }
+
+
+
+
+    // public function tallyPrelim()
+    // {
+    //     // Fetch all categories and ensure they have names
+    //     $categories = Category::all()->mapWithKeys(function ($category) {
+    //         return [$category->id => $category->category_name];
+    //     });
+
+    //     // Get all candidates with their scores
+    //     $candidates = Candidate::with(['scores'])->get();
+
+    //     $candidateScores = [];
+
+    //     foreach ($candidates as $candidate) {
+    //         // Initialize scores_by_category with all categories
+    //         $scoresByCategory = [];
+    //         foreach ($categories as $categoryId => $categoryName) {
+    //             $scoresByCategory[$categoryId] = [
+    //                 'category_name' => $categoryName,
+    //                 'total_score' => 0,
+    //             ];
+    //         }
+
+    //         // Populate actual scores grouped by category
+    //         foreach ($candidate->scores->groupBy('category_id') as $categoryId => $scores) {
+    //             if (isset($scoresByCategory[$categoryId])) {
+    //                 $scoresByCategory[$categoryId]['total_score'] = $scores->sum('score');
+    //             }
+    //         }
+
+    //         // Compute total score across all categories
+    //         $overallTotalScore = array_sum(array_column($scoresByCategory, 'total_score'));
+
+    //         $candidateScores[] = [
+    //             'candidate_id' => $candidate->id,
+    //             'candidate_number' => $candidate->candidate_number,
+    //             'candidate_name' => $candidate->candidate_name,
+    //             'scores_by_category' => $scoresByCategory,
+    //             'overall_total_score' => $overallTotalScore,
+    //         ];
+    //     }
+
+    //     // Rank candidates based on the overall total score (highest first)
+    //     usort($candidateScores, fn($a, $b) => $b['overall_total_score'] <=> $a['overall_total_score']);
+
+    //     // Assign ranking (handling ties)
+    //     $rank = 1;
+    //     $previousScore = null;
+    //     foreach ($candidateScores as $index => &$candidate) {
+    //         if ($previousScore !== null && $candidate['overall_total_score'] < $previousScore) {
+    //             $rank = $index + 1;
+    //         }
+    //         $candidate['rank'] = $rank;
+    //         $previousScore = $candidate['overall_total_score'];
+    //     }
+
+    //     return response()->json([
+    //         'candidates' => $candidateScores
+    //     ]);
+    // }
+
+
+
+
+
+
+
+
     public function beautyRanking()
     {
         // Filter by category 9

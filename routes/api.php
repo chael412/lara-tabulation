@@ -29,6 +29,9 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     Route::get('beauty_final', [FinalScoreController::class, 'beautyFinal']);
     Route::get('qa_final', [FinalScoreController::class, 'qaFinal']);
+
+    Route::get('tally_prelim', [ScoreController::class, 'tallyPrelim']);
+    Route::get('tally_final', [FinalScoreController::class, 'tallyFinal']);
 });
 
 

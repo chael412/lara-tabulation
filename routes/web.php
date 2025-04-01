@@ -35,6 +35,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
     Route::get('beautyfinal', [AdminCategoryController::class, 'getBeautyFinal'])->name('admin.beautyfinal');
     Route::get('qafinal', [AdminCategoryController::class, 'getQAFinal'])->name('admin.qafinal');
+
+    Route::get('tallyprelim', [AdminCategoryController::class, 'getTallyPrelim'])->name('admin.tallyprelim');
+    Route::get('tallyfinal', [AdminCategoryController::class, 'getTallyFinal'])->name('admin.tallyfinal');
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {

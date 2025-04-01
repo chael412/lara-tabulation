@@ -9,6 +9,16 @@ use Inertia\Inertia;
 class AdminCategoryController extends Controller
 {
 
+
+    public function getTallyFinal()
+    {
+        return Inertia::render('Admin/Category/TallyFinal');
+    }
+
+    public function getTallyPrelim()
+    {
+        return Inertia::render('Admin/Category/TallyPrelim');
+    }
     public function getQAFinal()
     {
         return Inertia::render('Admin/Category/FinalQA');

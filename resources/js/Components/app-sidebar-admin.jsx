@@ -1,3 +1,4 @@
+import { BsFillFlagFill } from "react-icons/bs";
 import * as React from "react";
 import {
     AudioWaveform,
@@ -106,6 +107,12 @@ export function AppSidebar({ ...props }) {
                 icon: LayoutDashboard,
                 isActive: url === route("admin.beauty", {}, false),
             },
+            {
+                title: "Tally Preliminary",
+                url: route("admin.tallyprelim"),
+                icon: BsFillFlagFill,
+                isActive: url === route("admin.tallyprelim", {}, false),
+            },
         ],
 
         navFinal: [
@@ -114,6 +121,12 @@ export function AppSidebar({ ...props }) {
                 url: route("admin.beautyfinal"),
                 icon: Award,
                 isActive: url === route("admin.beautyfinal", {}, false),
+            },
+            {
+                title: "Top 5 Q&A",
+                url: route("admin.qafinal"),
+                icon: Award,
+                isActive: url === route("admin.qafinal", {}, false),
             },
         ],
     };
