@@ -23,7 +23,7 @@ const TallyFinal = () => {
         <AuthenticatedLayout
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Tally Preliminary
+                    Final Tally
                 </h2>
             }
         >
@@ -62,7 +62,7 @@ const TallyFinal = () => {
                                         colSpan={12}
                                         className="px-4 pt-4 text-center text-black text-xl font-light bg-white border-b border-black"
                                     >
-                                        Preliminary
+                                        Final Tally
                                     </th>
                                 </tr>
                             </thead>
