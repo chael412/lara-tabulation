@@ -50,6 +50,12 @@ export function AppSidebar({ ...props }) {
                 icon: House,
                 isActive: url === route("admin.dashboard", {}, false),
             },
+            {
+                title: "Candidates",
+                url: route("admin.candidate.index"),
+                icon: House,
+                isActive: url === route("admin.candidate.index", {}, false),
+            },
         ],
 
         navCategory: [
