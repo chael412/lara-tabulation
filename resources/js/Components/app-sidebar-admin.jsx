@@ -60,7 +60,7 @@ export function AppSidebar({ ...props }) {
 
         navCategory: [
             {
-                title: "Prodcution Number",
+                title: "Production Number",
                 url: route("admin.productionnumber"),
                 icon: LayoutDashboard,
                 isActive: url === route("admin.productionnumber", {}, false),

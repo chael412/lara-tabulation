@@ -16,12 +16,13 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
+import useAppUrl from "@/hooks/useAppUrl";
 
 export default function Page({ scores = {}, candidates }) {
     const contestants = candidates;
     const { register, handleSubmit } = useForm();
     const user = usePage().props.auth.user;
-
+    const appURL = useAppUrl();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [formData, setFormData] = useState(null);
 
@@ -42,7 +43,7 @@ export default function Page({ scores = {}, candidates }) {
 
         try {
             const response = await axios.post(
-                "https://piton.chaelx.online/api/storefinalscores",
+                `${appURL}/api/storefinalscores`,
                 formData
             );
 

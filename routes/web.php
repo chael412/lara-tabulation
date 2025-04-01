@@ -42,6 +42,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
     Route::get('candidate', [CandidateController::class, 'getCandidates'])->name('admin.candidate.index');
     Route::get('settopfive/{candidate}', [CandidateController::class, 'setTopFive'])->name('admin.settopfive');
+    Route::get('settono/{candidate}', [CandidateController::class, 'setToNo'])->name('admin.settono');
 });
 
 Route::middleware(['auth', 'role:judge'])->prefix('judge')->group(function () {
