@@ -104,6 +104,18 @@ export function AppSidebar({ ...props }) {
                 icon: LayoutDashboard,
                 isActive: url === route("beauty", {}, false),
             },
+            {
+                title: "Top 5 Beauty",
+                url: route("beautyfinal"),
+                icon: LayoutDashboard,
+                isActive: url === route("beautyfinal", {}, false),
+            },
+            {
+                title: "Top 5 Question and Answer",
+                url: route("qafinal"),
+                icon: LayoutDashboard,
+                isActive: url === route("qafinal", {}, false),
+            },
         ],
     };
 

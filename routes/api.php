@@ -32,4 +32,5 @@ Route::middleware(['auth', 'web'])->group(function () {
 });
 
 
-Route::post('storeproduction', [JudgeCategoryController::class, 'storeProductionNumber'])->name('storeproduction');
+Route::post('storeproduction', [JudgeCategoryController::class, 'storeScores'])->name('storeproduction');
+Route::post('storefinalscores', [JudgeCategoryController::class, 'storeFinalScores'])->name('storefinalscores');

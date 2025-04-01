@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
-export default function Page() {
+export default function Page({ scores }) {
     const contestants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const { register, handleSubmit } = useForm();
     const user = usePage().props.auth.user;
@@ -27,7 +27,7 @@ export default function Page() {
     const handleFormSubmit = (data) => {
         const formattedData = {
             ...data,
-            category_id: 7,
+            category_id: 6,
             user_id: user.id,
             percentage: 15,
         };
@@ -47,6 +47,7 @@ export default function Page() {
 
             console.log("Server Response:", response.data);
             toast("Score has been submitted successfully!");
+            window.location.reload();
         } catch (error) {
             console.error(
                 "Error submitting data:",
@@ -74,6 +75,7 @@ export default function Page() {
                         <CategoryTable
                             contestants={contestants}
                             register={register}
+                            candidate_scores={scores}
                         />
                     </form>
                 </div>

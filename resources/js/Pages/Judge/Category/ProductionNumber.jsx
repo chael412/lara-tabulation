@@ -17,7 +17,7 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 
-export default function Page() {
+export default function Page({ scores }) {
     const contestants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const { register, handleSubmit } = useForm();
     const user = usePage().props.auth.user;
@@ -47,6 +47,7 @@ export default function Page() {
             );
             console.log("Server Response:", response.data);
             toast("Score has been submitted successfully!");
+            window.location.reload();
         } catch (error) {
             console.error(
                 "Error submitting data:",
@@ -68,6 +69,7 @@ export default function Page() {
         >
             <Head title="Dashboard" />
             <div className="flex justify-center items-center my-16 px-6">
+                {/* <pre>{JSON.stringify(scores, undefined, 4)}</pre> */}
                 <div className="p-10 bg-gray-100 rounded-xl border border-gray-600 shadow-lg w-full max-w-4xl text-center">
                     <p className="text-3xl font-semibold mb-6">
                         Production Number 10%
@@ -76,6 +78,7 @@ export default function Page() {
                         <CategoryTable
                             contestants={contestants}
                             register={register}
+                            candidate_scores={scores}
                         />
                     </form>
                 </div>
