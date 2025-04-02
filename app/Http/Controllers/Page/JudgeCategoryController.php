@@ -19,8 +19,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 1)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/ProductionNumber', [
             'scores' => $query
         ]);
@@ -29,8 +29,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 2)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/JeansWear', [
             'scores' => $query
         ]);
@@ -39,8 +39,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 4)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/CasualWear', [
             'scores' => $query
         ]);
@@ -49,8 +49,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 9)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/Beauty', [
             'scores' => $query
         ]);
@@ -59,8 +59,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 3)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/FestivalAttire', [
             'scores' => $query
         ]);
@@ -69,8 +69,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 7)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/Gown', [
             'scores' => $query
         ]);
@@ -79,8 +79,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 8)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/QandA', [
             'scores' => $query
         ]);
@@ -89,8 +89,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 5)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/Swimsuit', [
             'scores' => $query
         ]);
@@ -99,8 +99,8 @@ class JudgeCategoryController extends Controller
     {
         $cat = Score::query();
         $query = $cat->where('category_id', 6)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
         return Inertia::render('Judge/Category/Talent', [
             'scores' => $query
         ]);
@@ -113,8 +113,8 @@ class JudgeCategoryController extends Controller
 
         $cat = Score::query();
         $query = $cat->where('category_id', 10)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
 
         return Inertia::render('Judge/Category/FinalBeauty', [
             'scores' => $query,
@@ -129,8 +129,8 @@ class JudgeCategoryController extends Controller
 
         $cat = Score::query();
         $query = $cat->where('category_id', 11)
-                    ->where('user_id', Auth::id()) // Get the authenticated user's ID
-                    ->get(); // Retrieve results
+            ->where('user_id', Auth::id()) // Get the authenticated user's ID
+            ->get(); // Retrieve results
 
         return Inertia::render('Judge/Category/FinalQandA', [
             'scores' => $query,
@@ -149,15 +149,13 @@ class JudgeCategoryController extends Controller
             if (strpos($key, 'score-') === 0) {
                 // Extract the candidate number from "score-X"
                 $candidateNumber = str_replace('score-', '', $key);
-                $average = round(($value / 100) * $data['percentage'], 2);
                 // Prepare an array for bulk insertion
                 $scores[] = [
                     'category_id' => $data['category_id'],
                     'user_id' => $data['user_id'],
                     'candidate_id' => (int) $candidateNumber + 1, // Adjusting candidate numbering
                     'round' => 1,
-                    'score' => $average,
-                    'raw_score' => $value
+                    'score' => $value
                 ];
             }
         }
@@ -171,7 +169,8 @@ class JudgeCategoryController extends Controller
         ], 200);
     }
 
-    public function storeFinalScores(Request $request){
+    public function storeFinalScores(Request $request)
+    {
         $data = $request->all();
         $query = Candidate::query();
         $candidateIds = $query->where('top_five', '=', 'yes')->pluck('candidate_number');
@@ -182,15 +181,13 @@ class JudgeCategoryController extends Controller
             if (strpos($key, 'score-') === 0) {
                 // Extract the candidate number from "score-X"
                 $candidateNumber = str_replace('score-', '', $key);
-                $average = round(($value / 100) * $data['percentage'], 2);
                 // Prepare an array for bulk insertion
                 $scores[] = [
                     'category_id' => $data['category_id'],
                     'user_id' => $data['user_id'],
                     'candidate_id' => $candidates[(int) $candidateNumber], // Adjusting candidate numbering
                     'round' => 2,
-                    'score' => $average,
-                    'raw_score' => $value
+                    'score' => $value
                 ];
             }
         }

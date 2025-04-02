@@ -20,7 +20,7 @@ class CandidateFactory extends Factory
     {
         // Ensure the counter cycles from 1 to 7
         $number = self::$counter;
-        self::$counter = self::$counter < 10 ? self::$counter + 1 : 1;
+        self::$counter = self::$counter < 11 ? self::$counter + 1 : 1;
 
         return [
             'candidate_number' => $number,
