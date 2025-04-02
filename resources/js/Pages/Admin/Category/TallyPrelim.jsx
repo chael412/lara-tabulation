@@ -95,7 +95,14 @@ const TallyPrelim = () => {
                             </thead>
                             <tbody>
                                 {data?.candidates.map((candidate, index) => (
-                                    <tr key={candidate.candidate_id}>
+                                    <tr
+                                        key={candidate.candidate_id}
+                                        className={`border-b border-black last:border-b-0 ${
+                                            candidate.rank <= 5
+                                                ? "bg-blue-300  "
+                                                : ""
+                                        }`}
+                                    >
                                         {/* Rank */}
                                         <td className="px-4 py-2 text-sm text-black font-semibold border-b border-black">
                                             {candidate.candidate_number}

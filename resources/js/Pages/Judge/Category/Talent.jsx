@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import useAppUrl from "@/hooks/useAppUrl";
 
 export default function Page({ scores }) {
-    const contestants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const contestants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     const { register, handleSubmit } = useForm();
     const user = usePage().props.auth.user;
     const appURL = useAppUrl();
@@ -79,6 +79,7 @@ export default function Page({ scores }) {
                             contestants={contestants}
                             register={register}
                             candidate_scores={scores}
+                            percentage={15}
                         />
                     </form>
                 </div>

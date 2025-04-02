@@ -141,7 +141,6 @@ class JudgeCategoryController extends Controller
     public function storeScores(Request $request)
     {
         $data = $request->all();
-
         $scores = [];
 
         // Loop through the received data to extract scores

@@ -115,7 +115,11 @@ const ProductionNumber = () => {
                                 {data?.candidates?.map((candidate) => (
                                     <tr
                                         key={candidate.candidate_id}
-                                        className="border-b border-black last:border-b-0"
+                                        className={`border-b border-black last:border-b-0 ${
+                                            candidate.rank === 1
+                                                ? "bg-blue-300"
+                                                : ""
+                                        }`}
                                     >
                                         <td className="px-4 py-2 text-black text-custom-sm font-medium">
                                             {candidate.candidate_number}

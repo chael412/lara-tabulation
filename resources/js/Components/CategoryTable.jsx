@@ -6,11 +6,13 @@ const CategoryTable = ({
     contestants,
     register = () => {},
     candidate_scores = {},
+    percentage,
 }) => {
     const candidateScores = {};
     candidate_scores.forEach((item, index) => {
-        candidateScores[`score-${index}`] = item.raw_score;
+        candidateScores[`score-${index}`] = item.score;
     });
+    const isReadOnly = Object.keys(candidateScores).length > 0;
 
     return (
         <div className="rounded-xl bg-white shadow-lg p-6">
@@ -21,7 +23,7 @@ const CategoryTable = ({
                             Candidate Number
                         </th>
                         <th className="p-4 text-left rounded-tr-xl">
-                            Score / 100
+                            Score / {percentage}
                         </th>
                         <th className="p-4 text-left rounded-tr-xl"></th>
                     </tr>
@@ -44,10 +46,12 @@ const CategoryTable = ({
                                     placeholder="0"
                                     className="max-w-[200px] text-lg py-5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                     min="0"
-                                    max="100"
+                                    max={percentage}
+                                    step="0.01"
                                     defaultValue={
                                         candidateScores[`score-${index}`] || 0
                                     }
+                                    readOnly={isReadOnly}
                                 />
                             </td>
                         </tr>

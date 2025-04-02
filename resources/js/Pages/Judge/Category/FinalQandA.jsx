@@ -81,6 +81,7 @@ export default function Page({ scores = {}, candidates }) {
                             contestants={contestants}
                             register={register}
                             candidate_scores={scores}
+                            percentage={60}
                         />
                     </form>
                 </div>
