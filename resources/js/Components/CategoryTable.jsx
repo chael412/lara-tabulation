@@ -45,13 +45,14 @@ const CategoryTable = ({
                                     name={`score-${index}`}
                                     placeholder="0"
                                     className="max-w-[200px] text-lg py-5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    min="0"
+                                    min="1"
                                     max={percentage}
                                     step="0.01"
                                     defaultValue={
                                         candidateScores[`score-${index}`] || 0
                                     }
                                     readOnly={isReadOnly}
+                                    onWheel={(e) => e.target.blur()}
                                 />
                             </td>
                         </tr>
